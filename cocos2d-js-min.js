@@ -1962,35 +1962,35 @@
             }
         }
         for (var l = {
-                to: function(t, e, i) {
-                    return (i = i || Object.create(null)).relative = !1, new n(t, e, i)
-                },
-                by: function(t, e, i) {
-                    return (i = i || Object.create(null)).relative = !0, new n(t, e, i)
-                },
-                set: function(t) {
-                    return new r(t)
-                },
-                delay: cc.delayTime,
-                call: cc.callFunc,
-                hide: cc.hide,
-                show: cc.show,
-                removeSelf: cc.removeSelf,
-                sequence: a(cc.sequence),
-                parallel: a(cc.spawn)
-            }, h = {
-                repeat: cc.repeat,
-                repeatForever: function(t) {
-                    return cc.repeat(t, 1e9)
-                },
-                reverseTime: cc.reverseTime
-            }, c = Object.keys(l), u = function(t) {
-                var e = c[t];
-                s.prototype[e] = function() {
-                    var t = l[e].apply(l, arguments);
-                    return this._actions.push(t), this
-                }
-            }, _ = 0; _ < c.length; _++) u(_);
+            to: function(t, e, i) {
+                return (i = i || Object.create(null)).relative = !1, new n(t, e, i)
+            },
+            by: function(t, e, i) {
+                return (i = i || Object.create(null)).relative = !0, new n(t, e, i)
+            },
+            set: function(t) {
+                return new r(t)
+            },
+            delay: cc.delayTime,
+            call: cc.callFunc,
+            hide: cc.hide,
+            show: cc.show,
+            removeSelf: cc.removeSelf,
+            sequence: a(cc.sequence),
+            parallel: a(cc.spawn)
+        }, h = {
+            repeat: cc.repeat,
+            repeatForever: function(t) {
+                return cc.repeat(t, 1e9)
+            },
+            reverseTime: cc.reverseTime
+        }, c = Object.keys(l), u = function(t) {
+            var e = c[t];
+            s.prototype[e] = function() {
+                var t = l[e].apply(l, arguments);
+                return this._actions.push(t), this
+            }
+        }, _ = 0; _ < c.length; _++) u(_);
         c = Object.keys(h);
         var f = function(t) {
             var e = c[t];
@@ -2187,9 +2187,9 @@
                     for (var m = h.ratios, y = void 0, v = void 0, g = !0, x = 1, b = m.length; x < b; x++)
                         if (y = m[x] - m[x - 1], 1 === x) v = y;
                         else if (Math.abs(y - v) > 1e-6) {
-                        g = !1;
-                        break
-                    }
+                            g = !1;
+                            break
+                        }
                     h._findFrameIndex = g ? o : l;
                     var A = h.values[0];
                     return void 0 === A || null === A || h._lerp || ("number" == typeof A ? h._lerp = s.prototype._lerpNumber : A instanceof cc.Quat ? h._lerp = s.prototype._lerpQuat : A instanceof cc.Vec2 || A instanceof cc.Vec3 ? h._lerp = s.prototype._lerpVector : A.lerp && (h._lerp = s.prototype._lerpObject)), h
@@ -2319,18 +2319,18 @@
                     if (_ < 0)
                         if ((_ = ~_) <= 0) u = n[0];
                         else if (_ >= s) u = n[s - 1];
-                    else {
-                        var f = n[_ - 1];
-                        if (this._lerp) {
-                            var d = r[_ - 1],
-                                p = r[_],
-                                m = this.types[_ - 1],
-                                y = (e - d) / (p - d);
-                            m && (y = a(y, m));
-                            var v = n[_];
-                            u = this._lerp(f, v, y)
-                        } else u = f
-                    } else u = n[_];
+                        else {
+                            var f = n[_ - 1];
+                            if (this._lerp) {
+                                var d = r[_ - 1],
+                                    p = r[_],
+                                    m = this.types[_ - 1],
+                                    y = (e - d) / (p - d);
+                                m && (y = a(y, m));
+                                var v = n[_];
+                                u = this._lerp(f, v, y)
+                            } else u = f
+                        } else u = n[_];
                     this.target[this.prop] = u
                 }
             }
@@ -3025,10 +3025,10 @@
                 this._state = l.State.PLAYING, this._element && (this._bindEnded(), this._element.play(), this._touchToPlay())
             }, t._touchToPlay = function() {
                 if (this._src && this._src.loadMode === s.DOM_AUDIO && this._element.paused && a.push({
-                        instance: this,
-                        offset: 0,
-                        audio: this._element
-                    }), !o) {
+                    instance: this,
+                    offset: 0,
+                    audio: this._element
+                }), !o) {
                     o = !0;
                     var t = "ontouchend" in window ? "touchend" : "mousedown";
                     cc.game.canvas.addEventListener(t, (function() {
@@ -3600,13 +3600,13 @@
                     for (; i < l;)
                         if (0, (a = this.DecodeValue(this.distanceTree)) < 16) _[i++] = a;
                         else if (16 === a) {
-                        var f;
-                        if (i + (a = 3 + this.readBits(2)) > l) return this.flushBuffer(), 1;
-                        for (f = i ? _[i - 1] : 0; a--;) _[i++] = f
-                    } else {
-                        if (i + (a = 17 === a ? 3 + this.readBits(3) : 11 + this.readBits(7)) > l) return this.flushBuffer(), 1;
-                        for (; a--;) _[i++] = 0
-                    }
+                            var f;
+                            if (i + (a = 3 + this.readBits(2)) > l) return this.flushBuffer(), 1;
+                            for (f = i ? _[i - 1] : 0; a--;) _[i++] = f
+                        } else {
+                            if (i + (a = 17 === a ? 3 + this.readBits(3) : 11 + this.readBits(7)) > l) return this.flushBuffer(), 1;
+                            for (; a--;) _[i++] = 0
+                        }
                     for (p = this.literalTree.length, i = 0; i < p; i++) this.literalTree[i] = new n.HufNode;
                     if (this.CreateTree(this.literalTree, h, _, 0)) return this.flushBuffer(), 1;
                     for (p = this.literalTree.length, i = 0; i < p; i++) this.distanceTree[i] = new n.HufNode;
@@ -5837,10 +5837,10 @@
         "use strict";
         i.__esModule = !0, i.wireframe = function(t) {
             for (var e = [
-                    [0, 1],
-                    [1, 2],
-                    [2, 0]
-                ], i = [], n = {}, r = 0; r < t.length; r += 3)
+                [0, 1],
+                [1, 2],
+                [2, 0]
+            ], i = [], n = {}, r = 0; r < t.length; r += 3)
                 for (var s = 0; s < 3; ++s) {
                     var o = t[r + e[s][0]],
                         a = t[r + e[s][1]],
@@ -5853,8 +5853,8 @@
             return e
         }, i.toWavefrontOBJ = function(t) {
             for (var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1, i = t.positions, n = t.uvs, r = t.normals, s = t.indices, o = function(t) {
-                    return s[t] + 1 + "/" + (s[t] + 1) + "/" + (s[t] + 1)
-                }, a = "", l = 0; l < i.length; l += 3) a += "v " + i[l] * e + " " + i[l + 1] * e + " " + i[l + 2] * e + "\n";
+                return s[t] + 1 + "/" + (s[t] + 1) + "/" + (s[t] + 1)
+            }, a = "", l = 0; l < i.length; l += 3) a += "v " + i[l] * e + " " + i[l + 1] * e + " " + i[l + 2] * e + "\n";
             for (var h = 0; h < n.length; h += 2) a += "vt " + n[h] + " " + n[h + 1] + "\n";
             for (var c = 0; c < r.length; c += 3) a += "vn " + r[c] + " " + r[c + 1] + " " + r[c + 2] + "\n";
             for (var u = 0; u < s.length; u += 3) a += "f " + o(u) + " " + o(u + 1) + " " + o(u + 2) + "\n";
@@ -6076,8 +6076,8 @@
                     var o = e[s],
                         a = {};
                     for (var l in r[s] = {
-                            props: a
-                        }, o) {
+                        props: a
+                    }, o) {
                         var h = [],
                             c = o[l].frameCount;
                         i = o[l].offset;
@@ -6516,8 +6516,8 @@
             runSceneImmediate: function(t, e, i) {
                 cc.assertID(t instanceof cc.Scene, 1216), t._load();
                 for (var n = Object.keys(l._persistRootNodes).map((function(t) {
-                        return l._persistRootNodes[t]
-                    })), s = 0; s < n.length; s++) {
+                    return l._persistRootNodes[t]
+                })), s = 0; s < n.length; s++) {
                     var o = n[s],
                         h = t.getChildByUuid(o.uuid);
                     if (h) {
@@ -6839,8 +6839,8 @@
                             r = void 0,
                             a = t instanceof HTMLElement ? t : document.querySelector(t) || document.querySelector("#" + t);
                         if ("CANVAS" === a.tagName ? (e = a.width, i = a.height, this.canvas = n = a, this.container = r = document.createElement("DIV"), n.parentNode && n.parentNode.insertBefore(r, n)) : ("DIV" !== a.tagName && cc.warnID(3819), e = a.clientWidth, i = a.clientHeight, this.canvas = n = document.createElement("CANVAS"), this.container = r = document.createElement("DIV"), a.appendChild(r)), r.setAttribute("id", "Cocos2dGameContainer"), r.appendChild(n), this.frame = r.parentNode === document.body ? document.documentElement : r.parentNode, (function(t, e) {
-                                (" " + t.className + " ").indexOf(" " + e + " ") > -1 || (t.className && (t.className += " "), t.className += e)
-                            })(n, "gameCanvas"), n.setAttribute("width", e || 480), n.setAttribute("height", i || 320), n.setAttribute("tabindex", 99), this._determineRenderType(), this.renderType === this.RENDER_TYPE_WEBGL) {
+                            (" " + t.className + " ").indexOf(" " + e + " ") > -1 || (t.className && (t.className += " "), t.className += e)
+                        })(n, "gameCanvas"), n.setAttribute("width", e || 480), n.setAttribute("height", i || 320), n.setAttribute("tabindex", 99), this._determineRenderType(), this.renderType === this.RENDER_TYPE_WEBGL) {
                             var l = {
                                 stencil: !0,
                                 antialias: cc.macro.ENABLE_WEBGL_ANTIALIAS,
@@ -12489,9 +12489,9 @@
                     if (this._type === p.RECT) e.rect(r, s, i, n);
                     else if (this._type === p.ELLIPSE) {
                         for (var o = d(cc.v2(r + i / 2, s + n / 2), {
-                                x: i / 2,
-                                y: n / 2
-                            }, this._segments), a = 0; a < o.length; ++a) {
+                            x: i / 2,
+                            y: n / 2
+                        }, this._segments), a = 0; a < o.length; ++a) {
                             var l = o[a];
                             0 === a ? e.moveTo(l.x, l.y) : e.lineTo(l.x, l.y)
                         }
@@ -13365,13 +13365,13 @@
             },
             _onTouchEnded: function(t) {
                 for (var e = this, i = this.node.getComponents(cc.Component), n = function(n) {
-                        var r = e._labelSegments[n],
-                            s = r._clickHandler,
-                            o = r._clickParam;
-                        s && e._containsTouchLocation(r, t.touch.getLocation()) && (i.forEach((function(e) {
-                            e.enabledInHierarchy && e[s] && e[s](t, o)
-                        })), t.stopPropagation())
-                    }, r = 0; r < this._labelSegments.length; ++r) n(r)
+                    var r = e._labelSegments[n],
+                        s = r._clickHandler,
+                        o = r._clickParam;
+                    s && e._containsTouchLocation(r, t.touch.getLocation()) && (i.forEach((function(e) {
+                        e.enabledInHierarchy && e[s] && e[s](t, o)
+                    })), t.stopPropagation())
+                }, r = 0; r < this._labelSegments.length; ++r) n(r)
             },
             _containsTouchLocation: function(t, e) {
                 return t.getBoundingBoxToWorld().contains(e)
@@ -14168,8 +14168,8 @@
                 _calculateTouchMoveVelocity: function() {
                     var t = 0;
                     if ((t = this._touchMoveTimeDeltas.reduce((function(t, e) {
-                            return t + e
-                        }), t)) <= 0 || t >= .5) return cc.v2(0, 0);
+                        return t + e
+                    }), t)) <= 0 || t >= .5) return cc.v2(0, 0);
                     var e = cc.v2(0, 0);
                     return e = this._touchMoveDisplacements.reduce((function(t, e) {
                         return t.add(e)
@@ -17439,18 +17439,18 @@
                     var i = t[e];
                     this.release(i)
                 } else if (t) {
-                    var n = this._getReferenceKey(t);
-                    if (n && n in cc.AssetLibrary.getBuiltinDeps()) return;
-                    var r = this.getItem(n);
-                    if (r) {
-                        this.removeItem(n);
-                        t = r.content
-                    }
-                    if (t instanceof cc.Asset) {
-                        var s = t.nativeUrl;
-                        s && this.release(s), t.destroy()
-                    }
+                var n = this._getReferenceKey(t);
+                if (n && n in cc.AssetLibrary.getBuiltinDeps()) return;
+                var r = this.getItem(n);
+                if (r) {
+                    this.removeItem(n);
+                    t = r.content
                 }
+                if (t instanceof cc.Asset) {
+                    var s = t.nativeUrl;
+                    s && this.release(s), t.destroy()
+                }
+            }
         }, v.releaseAsset = function(t) {
             var e = t._uuid;
             e && this.release(e)
@@ -17680,11 +17680,11 @@
                             var a = r[o];
                             a instanceof cc.RawAsset && s(a, e)
                         } else if (r.constructor && r.constructor !== Object) r instanceof cc.RawAsset && s(r, e);
-                        else
-                            for (var l = Object.getOwnPropertyNames(r), h = 0; h < l.length; h++) {
-                                var c = r[l[h]];
-                                c instanceof cc.RawAsset && s(c, e)
-                            }
+                    else
+                        for (var l = Object.getOwnPropertyNames(r), h = 0; h < l.length; h++) {
+                            var c = r[l[h]];
+                            c instanceof cc.RawAsset && s(c, e)
+                        }
             }
         }
 
@@ -17849,8 +17849,8 @@
                 r = void 0;
             if (this._curConcurrent < cc.macro.DOWNLOAD_MAX_CONCURRENT) {
                 if (this._curConcurrent++, void 0 !== (r = n.call(this, t, (function(t, n) {
-                        i._curConcurrent = Math.max(0, i._curConcurrent - 1), i._handleLoadQueue(), e && e(t, n)
-                    })))) return this._curConcurrent = Math.max(0, this._curConcurrent - 1), this._handleLoadQueue(), r
+                    i._curConcurrent = Math.max(0, i._curConcurrent - 1), i._handleLoadQueue(), e && e(t, n)
+                })))) return this._curConcurrent = Math.max(0, this._curConcurrent - 1), this._handleLoadQueue(), r
             } else if (t.ignoreMaxConcurrency) {
                 if (void 0 !== (r = n.call(this, t, e))) return r
             } else this._loadQueue.push({
@@ -18639,19 +18639,19 @@
                         _stillUseUrl: c[s]
                     })
                 } else {
-                    for (r = new Array(a.length), s = 0; s < a.length; s++) o = a[s], r[s] = {
-                        type: "uuid",
-                        uuid: o,
-                        _owner: l[s],
-                        _ownerProp: h[s],
-                        _stillUseUrl: c[s]
-                    };
-                    e._native && !e.constructor.preventPreloadNativeObject && r.push({
-                        url: e.nativeUrl,
-                        _owner: e,
-                        _ownerProp: "_nativeAsset"
-                    })
-                }
+                for (r = new Array(a.length), s = 0; s < a.length; s++) o = a[s], r[s] = {
+                    type: "uuid",
+                    uuid: o,
+                    _owner: l[s],
+                    _ownerProp: h[s],
+                    _stillUseUrl: c[s]
+                };
+                e._native && !e.constructor.preventPreloadNativeObject && r.push({
+                    url: e.nativeUrl,
+                    _owner: e,
+                    _ownerProp: "_nativeAsset"
+                })
+            }
             return r
         }
 
@@ -20366,10 +20366,10 @@
                                 s instanceof Array || (s = [s]);
                                 for (var o = 1 << i.groupIndex, a = 0, l = cc.game.collisionMatrix[i.groupIndex], h = 0; h < l.length; h++) l[h] && (a |= 1 << h);
                                 for (var c = {
-                                        categoryBits: o,
-                                        maskBits: a,
-                                        groupIndex: 0
-                                    }, u = cc.director.getPhysicsManager(), _ = 0; _ < s.length; _++) {
+                                    categoryBits: o,
+                                    maskBits: a,
+                                    groupIndex: 0
+                                }, u = cc.director.getPhysicsManager(), _ = 0; _ < s.length; _++) {
                                     var f = s[_],
                                         d = new b2.FixtureDef;
                                     d.density = this.density, d.isSensor = this.sensor, d.friction = this.friction, d.restitution = this.restitution, d.shape = f, d.filter = c;
@@ -22169,19 +22169,19 @@
                                 }
                             }), !1));
                             for (var l = cc.Event.EventMouse, h = [!n && ["mousedown", l.DOWN, function(i, n, r, s) {
-                                        e._mousePressed = !0, e.handleTouchesBegin([e.getTouchByXY(r.x, r.y, s)]), t.focus()
-                                    }], !n && ["mouseup", l.UP, function(t, i, n, r) {
-                                        e._mousePressed = !1, e.handleTouchesEnd([e.getTouchByXY(n.x, n.y, r)])
-                                    }], !n && ["mousemove", l.MOVE, function(t, i, n, r) {
-                                        e.handleTouchesMove([e.getTouchByXY(n.x, n.y, r)]), e._mousePressed || i.setButton(null)
-                                    }],
-                                    ["mousewheel", l.SCROLL, function(t, e) {
-                                        e.setScrollData(0, t.wheelDelta)
-                                    }],
-                                    ["DOMMouseScroll", l.SCROLL, function(t, e) {
-                                        e.setScrollData(0, -120 * t.detail)
-                                    }]
-                                ], c = 0; c < h.length; ++c) {
+                                e._mousePressed = !0, e.handleTouchesBegin([e.getTouchByXY(r.x, r.y, s)]), t.focus()
+                            }], !n && ["mouseup", l.UP, function(t, i, n, r) {
+                                e._mousePressed = !1, e.handleTouchesEnd([e.getTouchByXY(n.x, n.y, r)])
+                            }], !n && ["mousemove", l.MOVE, function(t, i, n, r) {
+                                e.handleTouchesMove([e.getTouchByXY(n.x, n.y, r)]), e._mousePressed || i.setButton(null)
+                            }],
+                                ["mousewheel", l.SCROLL, function(t, e) {
+                                    e.setScrollData(0, t.wheelDelta)
+                                }],
+                                ["DOMMouseScroll", l.SCROLL, function(t, e) {
+                                    e.setScrollData(0, -120 * t.detail)
+                                }]
+                            ], c = 0; c < h.length; ++c) {
                                 var u = h[c];
                                 u && (function() {
                                     var n = u[0],
@@ -22703,15 +22703,15 @@
             cc.sys = {};
             var t = cc.sys;
             if (t.LANGUAGE_ENGLISH = "en", t.LANGUAGE_CHINESE = "zh", t.LANGUAGE_FRENCH = "fr", t.LANGUAGE_ITALIAN = "it", t.LANGUAGE_GERMAN = "de", t.LANGUAGE_SPANISH = "es", t.LANGUAGE_DUTCH = "du", t.LANGUAGE_RUSSIAN = "ru", t.LANGUAGE_KOREAN = "ko", t.LANGUAGE_JAPANESE = "ja", t.LANGUAGE_HUNGARIAN = "hu", t.LANGUAGE_PORTUGUESE = "pt", t.LANGUAGE_ARABIC = "ar", t.LANGUAGE_NORWEGIAN = "no", t.LANGUAGE_POLISH = "pl", t.LANGUAGE_TURKISH = "tr", t.LANGUAGE_UKRAINIAN = "uk", t.LANGUAGE_ROMANIAN = "ro", t.LANGUAGE_BULGARIAN = "bg", t.LANGUAGE_UNKNOWN = "unknown", t.OS_IOS = "iOS", t.OS_ANDROID = "Android", t.OS_WINDOWS = "Windows", t.OS_MARMALADE = "Marmalade", t.OS_LINUX = "Linux", t.OS_BADA = "Bada", t.OS_BLACKBERRY = "Blackberry", t.OS_OSX = "OS X", t.OS_WP8 = "WP8", t.OS_WINRT = "WINRT", t.OS_UNKNOWN = "Unknown", t.UNKNOWN = -1, t.WIN32 = 0, t.LINUX = 1, t.MACOS = 2, t.ANDROID = 3, t.IPHONE = 4, t.IPAD = 5, t.BLACKBERRY = 6, t.NACL = 7, t.EMSCRIPTEN = 8, t.TIZEN = 9, t.WINRT = 10, t.WP8 = 11, t.MOBILE_BROWSER = 100, t.DESKTOP_BROWSER = 101, t.EDITOR_PAGE = 102, t.EDITOR_CORE = 103, t.WECHAT_GAME = 104, t.QQ_PLAY = 105, t.FB_PLAYABLE_ADS = 106, t.BAIDU_GAME = 107, t.VIVO_GAME = 108, t.OPPO_GAME = 109, t.HUAWEI_GAME = 110, t.XIAOMI_GAME = 111, t.JKW_GAME = 112, t.ALIPAY_GAME = 113, t.WECHAT_GAME_SUB = 114, t.BAIDU_GAME_SUB = 115, t.BROWSER_TYPE_WECHAT = "wechat", t.BROWSER_TYPE_WECHAT_GAME = "wechatgame", t.BROWSER_TYPE_WECHAT_GAME_SUB = "wechatgamesub", t.BROWSER_TYPE_BAIDU_GAME = "baidugame", t.BROWSER_TYPE_BAIDU_GAME_SUB = "baidugamesub", t.BROWSER_TYPE_XIAOMI_GAME = "xiaomigame", t.BROWSER_TYPE_ALIPAY_GAME = "alipaygame", t.BROWSER_TYPE_QQ_PLAY = "qqplay", t.BROWSER_TYPE_ANDROID = "androidbrowser", t.BROWSER_TYPE_IE = "ie", t.BROWSER_TYPE_EDGE = "edge", t.BROWSER_TYPE_QQ = "qqbrowser", t.BROWSER_TYPE_MOBILE_QQ = "mqqbrowser", t.BROWSER_TYPE_UC = "ucbrowser", t.BROWSER_TYPE_UCBS = "ucbs", t.BROWSER_TYPE_360 = "360browser", t.BROWSER_TYPE_BAIDU_APP = "baiduboxapp", t.BROWSER_TYPE_BAIDU = "baidubrowser", t.BROWSER_TYPE_MAXTHON = "maxthon", t.BROWSER_TYPE_OPERA = "opera", t.BROWSER_TYPE_OUPENG = "oupeng", t.BROWSER_TYPE_MIUI = "miuibrowser", t.BROWSER_TYPE_FIREFOX = "firefox", t.BROWSER_TYPE_SAFARI = "safari", t.BROWSER_TYPE_CHROME = "chrome", t.BROWSER_TYPE_LIEBAO = "liebao", t.BROWSER_TYPE_QZONE = "qzone", t.BROWSER_TYPE_SOUGOU = "sogou", t.BROWSER_TYPE_UNKNOWN = "unknown", t.isNative = !1, t.isBrowser = "object" == typeof window && "object" == typeof document && !0, t.glExtension = function(t) {
-                    return !!cc.renderer.device.ext(t)
-                }, t.getMaxJointMatrixSize = function() {
-                    if (!t._maxJointMatrixSize) {
-                        var e = cc.game._renderContext,
-                            i = Math.floor(e.getParameter(e.MAX_VERTEX_UNIFORM_VECTORS) / 4) - 10;
-                        t._maxJointMatrixSize = i < 50 ? 0 : 50
-                    }
-                    return t._maxJointMatrixSize
-                }, n.__globalAdapter && n.__globalAdapter.adaptSys) n.__globalAdapter.adaptSys(t);
+                return !!cc.renderer.device.ext(t)
+            }, t.getMaxJointMatrixSize = function() {
+                if (!t._maxJointMatrixSize) {
+                    var e = cc.game._renderContext,
+                        i = Math.floor(e.getParameter(e.MAX_VERTEX_UNIFORM_VECTORS) / 4) - 10;
+                    t._maxJointMatrixSize = i < 50 ? 0 : 50
+                }
+                return t._maxJointMatrixSize
+            }, n.__globalAdapter && n.__globalAdapter.adaptSys) n.__globalAdapter.adaptSys(t);
             else {
                 var e = window,
                     i = e.navigator,
@@ -22945,9 +22945,9 @@
                             }
                         }
                     } else if (cc.game.renderType === cc.game.RENDER_TYPE_CANVAS) {
-                    var o = cc.game.canvas.getContext("2d");
-                    o.imageSmoothingEnabled = t, o.mozImageSmoothingEnabled = t
-                }
+                        var o = cc.game.canvas.getContext("2d");
+                        o.imageSmoothingEnabled = t, o.mozImageSmoothingEnabled = t
+                    }
             },
             isAntiAliasEnabled: function() {
                 return this._antiAliasEnabled
@@ -23894,9 +23894,9 @@
                     if (this.parent instanceof cc.Component) {
                         if (t instanceof cc._BaseNode || t instanceof cc.Component) return this.getObjRef(t)
                     } else if (this.parent instanceof cc._BaseNode)
-                    if (t instanceof cc._BaseNode) {
-                        if (!t.isChildOf(this.parent)) return this.getObjRef(t)
-                    } else if (t instanceof cc.Component && !t.node.isChildOf(this.parent)) return this.getObjRef(t);
+                        if (t instanceof cc._BaseNode) {
+                            if (!t.isChildOf(this.parent)) return this.getObjRef(t)
+                        } else if (t instanceof cc.Component && !t.node.isChildOf(this.parent)) return this.getObjRef(t);
                 e = new v(d, "new " + this.getFuncModule(i, !0) + "()")
             } else if (i === Object) e = new v(d, "{}");
             else {
@@ -24012,9 +24012,9 @@
                     if (e instanceof cc.Component) {
                         if (t instanceof cc._BaseNode || t instanceof cc.Component) return t
                     } else if (e instanceof cc._BaseNode)
-                    if (t instanceof cc._BaseNode) {
-                        if (!t.isChildOf(e)) return t
-                    } else if (t instanceof cc.Component && !t.node.isChildOf(e)) return t;
+                        if (t instanceof cc._BaseNode) {
+                            if (!t.isChildOf(e)) return t
+                        } else if (t instanceof cc.Component && !t.node.isChildOf(e)) return t;
                 i = new _
             } else if (_ === Object) i = {};
             else {
@@ -24168,10 +24168,10 @@
 
             function i(t, e, i) {
                 return o.getset(o, e, (function() {
-                        return Object.assign({}, i)
-                    }), (function(t) {
-                        o.clear(i), Object.assign(i, t)
-                    })),
+                    return Object.assign({}, i)
+                }), (function(t) {
+                    o.clear(i), Object.assign(i, t)
+                })),
                     function(e, n) {
                         if (n.prototype.hasOwnProperty(t) && delete i[n.prototype[t]], o.value(n.prototype, t, e), e) {
                             var r = i[e];
@@ -24248,7 +24248,7 @@
                         r = "number" == typeof n ? u : _;
                     r.test(e) ? e = e.replace(r, n) : e += " " + n
                 } else
-                    for (var s = 1; s < t; ++s) e += " " + arguments[s];
+                for (var s = 1; s < t; ++s) e += " " + arguments[s];
             return e
         }, o.shiftArguments = function() {
             for (var t = arguments.length - 1, e = new Array(t), i = 0; i < t; ++i) e[i] = arguments[i + 1];
@@ -26215,9 +26215,9 @@
                                         break
                                     }
                                 } else if (s > w.width) {
-                                t = !0;
-                                break
-                            }
+                                    t = !0;
+                                    break
+                                }
                         }
                     }
                     return t
@@ -26247,12 +26247,12 @@
                             if (F > 0 && this._isHorizontalClamped(g, v))
                                 if (O === h.CLAMP) _.width = 0;
                                 else if (O === h.SHRINK) {
-                                if (w.width > u.w) {
-                                    s = !1;
-                                    break
+                                    if (w.width > u.w) {
+                                        s = !1;
+                                        break
+                                    }
+                                    _.width = 0
                                 }
-                                _.width = 0
-                            }
                             if (_.height > 0 && _.width > 0) {
                                 var x = this._determineRect(_),
                                     S = l.x + y[l.line];
@@ -26808,9 +26808,9 @@
                 for (var f, d, m = t; t.prev !== t.next;)
                     if (f = t.prev, d = t.next, u ? l(t, n, r, u) : a(t)) e.push(f.i / i), e.push(t.i / i), e.push(d.i / i), D(t), t = d.next, m = d.next;
                     else if ((t = d) === m) {
-                    _ ? 1 === _ ? o(t = h(t, e, i), e, i, n, r, u, 2) : 2 === _ && c(t, e, i, n, r, u) : o(s(t), e, i, n, r, u, 1);
-                    break
-                }
+                        _ ? 1 === _ ? o(t = h(t, e, i), e, i, n, r, u, 2) : 2 === _ && c(t, e, i, n, r, u) : o(s(t), e, i, n, r, u, 1);
+                        break
+                    }
             }
         }
 
@@ -27035,10 +27035,10 @@
             return 0 === o && 0 === u ? 0 : Math.abs((u - o) / o)
         }, n.flatten = function(t) {
             for (var e = t[0][0].length, i = {
-                    vertices: [],
-                    holes: [],
-                    dimensions: e
-                }, n = 0, r = 0; r < t.length; r++) {
+                vertices: [],
+                holes: [],
+                dimensions: e
+            }, n = 0, r = 0; r < t.length; r++) {
                 for (var s = 0; s < t[r].length; s++)
                     for (var o = 0; o < e; o++) i.vertices.push(t[r][s][o]);
                 r > 0 && (n += t[r - 1].length, i.holes.push(n))
@@ -28248,10 +28248,10 @@
                         var b = 2 * g;
                         v[b] = (l[g] - d) * m - r, v[b + 1] = (u - h[g] - p) * y - s
                     } else
-                        for (var A = 0, C = l.length; A < C; A++) {
-                            var T = 2 * A;
-                            v[T] = l[A] * m - r, v[T + 1] = (u - h[A]) * y - s
-                        }
+                    for (var A = 0, C = l.length; A < C; A++) {
+                        var T = 2 * A;
+                        v[T] = l[A] * m - r, v[T + 1] = (u - h[A]) * y - s
+                    }
             }, e.prototype.updateWorldVerts = function(t) {
                 for (var e = t.node._worldMatrix.m, i = e[0], n = e[1], r = e[4], s = e[5], o = e[12], a = e[13], l = this._local, h = this._renderData.vDatas[0], c = this.floatsPerVert, u = 0, _ = this.verticesCount; u < _; u++) {
                     var f = l[2 * u],
@@ -29635,10 +29635,10 @@
                     var n = t._components[i];
                     if (n.constructor === e) return n
                 } else
-                    for (var r = 0; r < t._components.length; ++r) {
-                        var s = t._components[r];
-                        if (s instanceof e) return s
-                    }
+                for (var r = 0; r < t._components.length; ++r) {
+                    var s = t._components[r];
+                    if (s instanceof e) return s
+                }
             return null
         }
 
@@ -29648,10 +29648,10 @@
                     var r = t._components[n];
                     r.constructor === e && i.push(r)
                 } else
-                    for (var s = 0; s < t._components.length; ++s) {
-                        var o = t._components[s];
-                        o instanceof e && i.push(o)
-                    }
+                for (var s = 0; s < t._components.length; ++s) {
+                    var o = t._components[s];
+                    o instanceof e && i.push(o)
+                }
         }
 
         function m(t, e) {
@@ -30222,29 +30222,29 @@
     300: [(function(t, e, i) {
         "use strict";
         for (var n = t("../platform/js"), r = {
-                propertyDefine: function(t, e, i) {
-                    function r(t, e, i, r) {
-                        var s = Object.getOwnPropertyDescriptor(t, e);
-                        if (s) s.get && (t[i] = s.get), s.set && r && (t[r] = s.set);
-                        else {
-                            var o = t[i];
-                            n.getset(t, e, o, t[r])
-                        }
+            propertyDefine: function(t, e, i) {
+                function r(t, e, i, r) {
+                    var s = Object.getOwnPropertyDescriptor(t, e);
+                    if (s) s.get && (t[i] = s.get), s.set && r && (t[r] = s.set);
+                    else {
+                        var o = t[i];
+                        n.getset(t, e, o, t[r])
                     }
-                    for (var s, o = t.prototype, a = 0; a < e.length; a++) {
-                        var l = (s = e[a])[0].toUpperCase() + s.slice(1);
-                        r(o, s, "get" + l, "set" + l)
-                    }
-                    for (s in i) {
-                        var h = i[s];
-                        r(o, s, h[0], h[1])
-                    }
-                },
-                NextPOT: function(t) {
-                    return t -= 1, t |= t >> 1, t |= t >> 2, t |= t >> 4, t |= t >> 8, (t |= t >> 16) + 1
-                },
-                BUILTIN_CLASSID_RE: /^(?:cc|dragonBones|sp|ccsg)\..+/
-            }, s = new Array(123), o = 0; o < 123; ++o) s[o] = 64;
+                }
+                for (var s, o = t.prototype, a = 0; a < e.length; a++) {
+                    var l = (s = e[a])[0].toUpperCase() + s.slice(1);
+                    r(o, s, "get" + l, "set" + l)
+                }
+                for (s in i) {
+                    var h = i[s];
+                    r(o, s, h[0], h[1])
+                }
+            },
+            NextPOT: function(t) {
+                return t -= 1, t |= t >> 1, t |= t >> 2, t |= t >> 4, t |= t >> 8, (t |= t >> 16) + 1
+            },
+            BUILTIN_CLASSID_RE: /^(?:cc|dragonBones|sp|ccsg)\..+/
+        }, s = new Array(123), o = 0; o < 123; ++o) s[o] = 64;
         for (var a = 0; a < 64; ++a) s["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charCodeAt(a)] = a;
         r.BASE64_VALUES = s, r.pushToMap = function(t, e, i, n) {
             var r = t[e];
@@ -30942,15 +30942,15 @@
             m15: 1
         });
         for (var h = function(t) {
-                Object.defineProperty(l.prototype, "m" + t, {
-                    get: function() {
-                        return this.m[t]
-                    },
-                    set: function(e) {
-                        this.m[t] = e
-                    }
-                })
-            }, c = 0; c < 16; c++) h(c);
+            Object.defineProperty(l.prototype, "m" + t, {
+                get: function() {
+                    return this.m[t]
+                },
+                set: function(e) {
+                    this.m[t] = e
+                }
+            })
+        }, c = 0; c < 16; c++) h(c);
         o.mixin(l.prototype, {
             clone: function() {
                 var t = this.m;
@@ -33962,9 +33962,9 @@
                 var e, i, s, o, a, l, h, c, u, _, f, d, p, m, y, v, g, x, b, A, C, T, S;
                 if (null == t && (t = this.imgData), 0 === t.length) return new Uint8Array(0);
                 for (t = new n.Inflate(t, {
-                        index: 0,
-                        verify: !1
-                    }).decompress(), v = (d = this.pixelBitlength / 8) * this.width, p = new Uint8Array(v * this.height), l = t.length, y = 0, m = 0, i = 0; m < l;) {
+                    index: 0,
+                    verify: !1
+                }).decompress(), v = (d = this.pixelBitlength / 8) * this.width, p = new Uint8Array(v * this.height), l = t.length, y = 0, m = 0, i = 0; m < l;) {
                     switch (t[m++]) {
                         case 0:
                             for (o = b = 0; b < v; o = b += 1) p[i++] = t[m++];
@@ -34490,12 +34490,12 @@
                             u = 0,
                             _ = !1;
                         if (r.BitsPerSample.values.forEach((function(t, e, i) {
-                                c[e] = {
-                                    bitsPerSample: t,
-                                    hasBytesPerSample: !1,
-                                    bytesPerSample: void 0
-                                }, t % 8 == 0 && (c[e].hasBytesPerSample = !0, c[e].bytesPerSample = t / 8), u += t
-                            }), this), u % 8 == 0) {
+                            c[e] = {
+                                bitsPerSample: t,
+                                hasBytesPerSample: !1,
+                                bytesPerSample: void 0
+                            }, t % 8 == 0 && (c[e].hasBytesPerSample = !0, c[e].bytesPerSample = t / 8), u += t
+                        }), this), u % 8 == 0) {
                             _ = !0;
                             var f = u / 8
                         }
@@ -35494,7 +35494,7 @@
                                 for (var n = T.add(), r = 0; r < i.length; ++r) n[r] = this._allocTextureUnit();
                                 e.setTextureArray(t.name, i, n)
                             } else e.setTexture(t.name, i, this._allocTextureUnit());
-                    else t.directly ? e.setUniformDirectly(t.name, i) : e.setUniform(t.name, i);
+                        else t.directly ? e.setUniformDirectly(t.name, i) : e.setUniform(t.name, i);
                     else console.warn("Failed to set technique property " + t.name + ", value not found.")
                 }, t.prototype._draw = function(t) {
                     var e = this._device,
@@ -35642,8 +35642,8 @@
             }));
             var r = function(r) {
                 for (var s = n[r], o = void 0, l = 0; l < e.length && !(o = e[l].uniforms.find((function(t) {
-                        return t.name === r
-                    }))); l++);
+                    return t.name === r
+                }))); l++);
                 if (!o) return cc.warn(t.name + " : illegal property: " + r + ", myabe defined a not used property"), "continue";
                 i[r] = Object.assign({}, s), i[r].value = s.type === a.default.PARAM_TEXTURE_2D ? null : new Float32Array(s.value)
             };
@@ -37076,13 +37076,13 @@
                 !s || ArrayBuffer.isView(s) || s instanceof ArrayBuffer ? (void 0 === n ? i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL, !1) : i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL, n), void 0 === r ? i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL, !1) : i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL, r), this._compressed ? i.compressedTexImage2D(i.TEXTURE_2D, e.level, t.internalFormat, e.width, e.height, 0, s) : i.texImage2D(i.TEXTURE_2D, e.level, t.internalFormat, e.width, e.height, 0, t.format, t.pixelType, s)) : (void 0 === n ? i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL, !0) : i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL, n), void 0 === r ? i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL, !1) : i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL, r), i.texImage2D(i.TEXTURE_2D, e.level, t.internalFormat, t.format, t.pixelType, s))
             }, e.prototype._setMipmap = function(t, e, i) {
                 for (var n = (0, r.glTextureFmt)(this._format), s = {
-                        width: this._width,
-                        height: this._height,
-                        flipY: e,
-                        premultiplyAlpha: i,
-                        level: 0,
-                        image: null
-                    }, o = 0; o < t.length; ++o) s.level = o, s.width = this._width >> o, s.height = this._height >> o, s.image = t[o], this._setImage(n, s)
+                    width: this._width,
+                    height: this._height,
+                    flipY: e,
+                    premultiplyAlpha: i,
+                    level: 0,
+                    image: null
+                }, o = 0; o < t.length; ++o) s.level = o, s.width = this._width >> o, s.height = this._height >> o, s.image = t[o], this._setImage(n, s)
             }, e.prototype._setTexInfo = function() {
                 var t = this._device._gl,
                     e = (0, s.isPow2)(this._width) && (0, s.isPow2)(this._height);
@@ -37165,14 +37165,14 @@
                 void 0 === n ? i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL, !1) : i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL, n), void 0 === r ? i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL, !1) : i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL, r), !o || ArrayBuffer.isView(o) || o instanceof ArrayBuffer ? this._compressed ? i.compressedTexImage2D(i.TEXTURE_CUBE_MAP_POSITIVE_X + s, e.level, t.internalFormat, e.width, e.height, 0, o) : i.texImage2D(i.TEXTURE_CUBE_MAP_POSITIVE_X + s, e.level, t.internalFormat, e.width, e.height, 0, t.format, t.pixelType, o) : i.texImage2D(i.TEXTURE_CUBE_MAP_POSITIVE_X + s, e.level, t.internalFormat, t.format, t.pixelType, o)
             }, e.prototype._setMipmap = function(t, e, i) {
                 for (var n = (0, r.glTextureFmt)(this._format), s = {
-                        width: this._width,
-                        height: this._height,
-                        faceIndex: 0,
-                        flipY: e,
-                        premultiplyAlpha: i,
-                        level: 0,
-                        image: null
-                    }, o = 0; o < t.length; ++o) {
+                    width: this._width,
+                    height: this._height,
+                    faceIndex: 0,
+                    flipY: e,
+                    premultiplyAlpha: i,
+                    level: 0,
+                    image: null
+                }, o = 0; o < t.length; ++o) {
                     var a = t[o];
                     s.level = o, s.width = this._width >> o, s.height = this._height >> o;
                     for (var l = 0; l < 6; ++l) s.faceIndex = l, s.image = a[l], this._setImage(n, s)
@@ -38158,15 +38158,15 @@
                             var r = e.data[n];
                             this._updateShaderDefines(r), this._draw(r)
                         } else
-                            for (var s = 0; s < e.length; ++s) {
-                                var o = e.data[s];
-                                this._shadowMaps.length = i.length;
-                                for (var a = 0; a < i.length; ++a) {
-                                    var l = i[a];
-                                    this._shadowMaps[a] = l.shadowMap, this._shadowMapSlots[a] = this._allocTextureUnit()
-                                }
-                                this._device.setTextureArray("cc_shadow_map", this._shadowMaps, this._shadowMapSlots), this._updateShaderDefines(o), this._draw(o)
+                        for (var s = 0; s < e.length; ++s) {
+                            var o = e.data[s];
+                            this._shadowMaps.length = i.length;
+                            for (var a = 0; a < i.length; ++a) {
+                                var l = i[a];
+                                this._shadowMaps[a] = l.shadowMap, this._shadowMapSlots[a] = this._allocTextureUnit()
                             }
+                            this._device.setTextureArray("cc_shadow_map", this._shadowMaps, this._shadowMapSlots), this._updateShaderDefines(o), this._draw(o)
+                        }
                 }, e.prototype._opaqueStage = function(t, e) {
                     t.getPosition(v), this._device.setUniform("cc_matView", n.mat4.array(u, t._matView)), this._device.setUniform("cc_matpProj", n.mat4.array(_, t._matProj)), this._device.setUniform("cc_matViewProj", n.mat4.array(f, t._matViewProj)), this._device.setUniform("cc_cameraPos", n.vec4.array(d, v)), this._submitLightsUniforms(), this._submitOtherStagesUniforms(), this._drawItems(t, e)
                 }, e.prototype._transparentStage = function(t, e) {
@@ -39900,8 +39900,8 @@
             var i = t.length;
             if (0 !== i)
                 for (var n = 0, r = function() {
-                        ++n >= i && e()
-                    }, s = 0; s < i; s++) {
+                    ++n >= i && e()
+                }, s = 0; s < i; s++) {
                     var o = t[s];
                     o.loaded ? r() : o.once("load", (function() {
                         r()
@@ -40360,9 +40360,9 @@
                         J = 0,
                         Z = !0;
                     for (-1 == i ? (m = e.row, y = t.row) : (m = t.row, y = e.row);
-                        (y - m) * i >= 0; m += i)
+                         (y - m) * i >= 0; m += i)
                         for (_ = c[m], Z = 0 == (J = L._getNodesCountByRow(m)) && void 0 != _, 1 == n ? (f = Z && t.col < _.minCol ? _.minCol : t.col, p = Z && e.col > _.maxCol ? _.maxCol : e.col) : (f = Z && e.col > _.maxCol ? _.maxCol : e.col, p = Z && t.col < _.minCol ? _.minCol : t.col);
-                            (p - f) * n >= 0; f += n)(v = _ && _[f]) ? (B = o[((V = a[v.index]) & u) >>> 0]) && (Y !== B.texId && (-1 !== Y && k(), q = l[Y = B.texId], O = h[q], T.material = O), O && (z = v.left - M, j = v.bottom - D, W = z + (g = B.tileset._tileSize).width, H = j + g.height, (X = s[v.index]) ? this.fillByTiledNode(X.node, F, N, z, W, H, j) : (F[E] = z, F[E + 1] = H, N[E + 4] = r, F[E + 5] = z, F[E + 6] = j, N[E + 9] = r, F[E + 10] = W, F[E + 11] = H, N[E + 14] = r, F[E + 15] = W, F[E + 16] = j, N[E + 19] = r), U(B, V), F[E + 2] = x.x, F[E + 3] = x.y, F[E + 7] = A.x, F[E + 8] = A.y, F[E + 12] = b.x, F[E + 13] = b.y, F[E + 17] = C.x, F[E + 18] = C.y, E += 20, R.adjust(4, 6), S._count += 6, w++, J > 0 && G(m, f), w >= d && k())) : J > 0 && G(m, f);
+                             (p - f) * n >= 0; f += n)(v = _ && _[f]) ? (B = o[((V = a[v.index]) & u) >>> 0]) && (Y !== B.texId && (-1 !== Y && k(), q = l[Y = B.texId], O = h[q], T.material = O), O && (z = v.left - M, j = v.bottom - D, W = z + (g = B.tileset._tileSize).width, H = j + g.height, (X = s[v.index]) ? this.fillByTiledNode(X.node, F, N, z, W, H, j) : (F[E] = z, F[E + 1] = H, N[E + 4] = r, F[E + 5] = z, F[E + 6] = j, N[E + 9] = r, F[E + 10] = W, F[E + 11] = H, N[E + 14] = r, F[E + 15] = W, F[E + 16] = j, N[E + 19] = r), U(B, V), F[E + 2] = x.x, F[E + 3] = x.y, F[E + 7] = A.x, F[E + 8] = A.y, F[E + 12] = b.x, F[E + 13] = b.y, F[E + 17] = C.x, F[E + 18] = C.y, E += 20, R.adjust(4, 6), S._count += 6, w++, J > 0 && G(m, f), w >= d && k())) : J > 0 && G(m, f);
                     R.uploadData(), S._count > 0 && (I.material = T.material, I.node = L.node, I._flushIA(T.ia))
                 }
             }, e.prototype.fillByTiledNode = function(t, e, i, n, s, o, a) {
@@ -41227,23 +41227,23 @@
                         if ((A = b[D])._visible && A._displayData)
                             if (A.updateWorldMatrix(), T = A._color, A.childArmature) this._traverseArmature(A.childArmature, e * T.a / 255);
                             else if (w = A.getTexture()) {
-                        a === w.url && l === A._blendMode || (a = w.url, l = A._blendMode, (E = u - 1) >= 0 && (c > 0 ? ((M = m[E]).indexCount = c, M.vertexCount = h, M.vfCount = 5 * h) : u--), m[u] = {
-                            tex: w,
-                            blendMode: A._blendMode,
-                            indexCount: 0,
-                            vertexCount: 0,
-                            vfCount: 0
-                        }, u++, c = 0, h = 0), S = (T.a * e << 24 >>> 0) + (T.b << 16) + (T.g << 8) + T.r, f !== S && (f = S, _ > 0 && (i[_ - 1].vfOffset = o), i[_++] = {
-                            r: T.r,
-                            g: T.g,
-                            b: T.b,
-                            a: T.a * e,
-                            vfOffset: 0
-                        }), g = A._localVertices, x = A._indices, C = A._worldMatrix.m;
-                        for (var I = 0, P = g.length; I < P;) d = g[I++], p = g[I++], y[o++] = d * C[0] + p * C[4] + C[12], y[o++] = d * C[1] + p * C[5] + C[13], y[o++] = g[I++], y[o++] = g[I++], y[o++] = S;
-                        for (var R = 0, O = x.length; R < O; R++) v[s++] = h + x[R];
-                        o / 5, c += x.length, h += g.length / 4
-                    }
+                                a === w.url && l === A._blendMode || (a = w.url, l = A._blendMode, (E = u - 1) >= 0 && (c > 0 ? ((M = m[E]).indexCount = c, M.vertexCount = h, M.vfCount = 5 * h) : u--), m[u] = {
+                                    tex: w,
+                                    blendMode: A._blendMode,
+                                    indexCount: 0,
+                                    vertexCount: 0,
+                                    vfCount: 0
+                                }, u++, c = 0, h = 0), S = (T.a * e << 24 >>> 0) + (T.b << 16) + (T.g << 8) + T.r, f !== S && (f = S, _ > 0 && (i[_ - 1].vfOffset = o), i[_++] = {
+                                    r: T.r,
+                                    g: T.g,
+                                    b: T.b,
+                                    a: T.a * e,
+                                    vfOffset: 0
+                                }), g = A._localVertices, x = A._indices, C = A._worldMatrix.m;
+                                for (var I = 0, P = g.length; I < P;) d = g[I++], p = g[I++], y[o++] = d * C[0] + p * C[4] + C[12], y[o++] = d * C[1] + p * C[5] + C[13], y[o++] = g[I++], y[o++] = g[I++], y[o++] = S;
+                                for (var R = 0, O = x.length; R < O; R++) v[s++] = h + x[R];
+                                o / 5, c += x.length, h += g.length / 4
+                            }
                 }
             }),
             y = cc.Class({
@@ -42005,9 +42005,9 @@
                                     i.spriteFrame = new cc.SpriteFrame, i.spriteFrame.setTexture(t, n, !1, r, s)
                                 }
                             } else
-                                for (var o in this.textures) {
-                                    this.textures[o].spriteFrame = null
-                                }
+                            for (var o in this.textures) {
+                                this.textures[o].spriteFrame = null
+                            }
                     }
                 }
             },
@@ -42242,13 +42242,13 @@
         "use strict";
         var n = (function() {
             var t = Object.setPrototypeOf || {
-                __proto__: []
-            }
-            instanceof Array && function(t, e) {
-                t.__proto__ = e
-            } || function(t, e) {
-                for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i])
-            }
+                    __proto__: []
+                }
+                instanceof Array && function(t, e) {
+                    t.__proto__ = e
+                } || function(t, e) {
+                    for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i])
+                }
         })();
         r || (r = {}), (function(t) {
             var e = (function() {
@@ -43116,9 +43116,9 @@
                                         l = this.boneMask.indexOf(a.name);
                                     l >= 0 && r.contains(a) && this.boneMask.splice(l, 1)
                                 } else
-                                    for (var h = 0, c = t.getBones(); h < c.length; h++) {
-                                        (a = c[h]) !== r && (r.contains(a) || this.boneMask.push(a.name))
-                                    }
+                                for (var h = 0, c = t.getBones(); h < c.length; h++) {
+                                    (a = c[h]) !== r && (r.contains(a) || this.boneMask.push(a.name))
+                                }
                     }
                 }, e
             })(t.BaseObject);
@@ -43260,17 +43260,17 @@
                                             if (0 === l.type)
                                                 if (null !== a.slot) null !== (u = a.slot.childArmature) && u.animation.fadeIn(l.name);
                                                 else if (null !== a.bone)
-                                            for (var h = 0, c = this.getSlots(); h < c.length; h++) {
-                                                var u, _ = c[h];
-                                                if (_.parent === a.bone) null !== (u = _.childArmature) && u.animation.fadeIn(l.name)
-                                            } else this._animation.fadeIn(l.name);
+                                                    for (var h = 0, c = this.getSlots(); h < c.length; h++) {
+                                                        var u, _ = c[h];
+                                                        if (_.parent === a.bone) null !== (u = _.childArmature) && u.animation.fadeIn(l.name)
+                                                    } else this._animation.fadeIn(l.name);
                                         a.returnToPool()
                                     }
                                     this._actions.length = 0, this._lockUpdate = !1
                                 }
                                 this._proxy.dbUpdate()
                             } else console.warn("The armature data has been disposed.\nPlease make sure dispose armature before call factory.clear().");
-                    else console.warn("The armature has been disposed.")
+                        else console.warn("The armature has been disposed.")
                 }, i.prototype.invalidUpdate = function(t, e) {
                     if (void 0 === t && (t = null), void 0 === e && (e = !1), null !== t && t.length > 0) {
                         if (null !== (o = this.getBone(t)) && (o.invalidUpdate(), e))
@@ -43632,13 +43632,13 @@
                                     a = this._parent._getGlobalTransformMatrix(s, o);
                                 e[n] = a.a * s + a.c * o + a.tx, e[n + 1] = a.b * s + a.d * o + a.ty
                             } else {
-                                var l = this._parent.globalTransformMatrix;
-                                for (n = 0, r = t.length; n < r; n += 2) {
-                                    s = t[n] + i[n], o = t[n + 1] + i[n + 1];
-                                    e[n] = l.a * s + l.c * o + l.tx, e[n + 1] = l.b * s + l.d * o + l.ty
-                                }
-                            } else
-                                for (n = 0, r = t.length; n < r; n += 2) e[n] = t[n] + i[n], e[n + 1] = t[n + 1] + i[n + 1]
+                            var l = this._parent.globalTransformMatrix;
+                            for (n = 0, r = t.length; n < r; n += 2) {
+                                s = t[n] + i[n], o = t[n + 1] + i[n + 1];
+                                e[n] = l.a * s + l.c * o + l.tx, e[n + 1] = l.b * s + l.d * o + l.ty
+                            }
+                        } else
+                        for (n = 0, r = t.length; n < r; n += 2) e[n] = t[n] + i[n], e[n + 1] = t[n + 1] + i[n + 1]
                 }, e.prototype._updateGlobalTransformMatrix = function(t) {
                     var e = 2 * this._boneData.segmentX,
                         i = this._vertices.length - 2,
@@ -44134,16 +44134,16 @@
                             }
                             this._pathGlobalVertices[p++] = m, this._pathGlobalVertices[p++] = y
                         } else {
-                            var A = this._pathSlot.parent;
-                            A.updateByConstraint();
-                            for (var C = A.globalTransformMatrix, T = 0, S = l; T < a; T += 2) {
-                                var w = s[S++] * n,
-                                    E = s[S++] * n,
-                                    M = C.a * w + C.c * E + C.tx,
-                                    D = C.b * w + C.d * E + C.ty;
-                                this._pathGlobalVertices[T] = M, this._pathGlobalVertices[T + 1] = D
-                            }
+                        var A = this._pathSlot.parent;
+                        A.updateByConstraint();
+                        for (var C = A.globalTransformMatrix, T = 0, S = l; T < a; T += 2) {
+                            var w = s[S++] * n,
+                                E = s[S++] * n,
+                                M = C.a * w + C.c * E + C.tx,
+                                D = C.b * w + C.d * E + C.ty;
+                            this._pathGlobalVertices[T] = M, this._pathGlobalVertices[T + 1] = D
                         }
+                    }
                 }, i.prototype._computeVertices = function(t, e, i, n) {
                     for (var r = i, s = t; r < e; r += 2) n[r] = this._pathGlobalVertices[s++], n[r + 1] = this._pathGlobalVertices[s++]
                 }, i.prototype._computeBezierCurve = function(t, e, i, n, r) {
@@ -44639,8 +44639,8 @@
                                         (f = t.BaseObject.borrowObject(t.IKConstraintTimelineState)).constraint = n, f.init(this._armature, this, _), this._constraintTimelines.push(f)
                                 }
                             } else if (this.resetToPose) {
-                                (f = t.BaseObject.borrowObject(t.IKConstraintTimelineState)).constraint = n, f.init(this._armature, this, null), this._constraintTimelines.push(f), this._poseTimelines.push(f)
-                            }
+                            (f = t.BaseObject.borrowObject(t.IKConstraintTimelineState)).constraint = n, f.init(this._armature, this, null), this._constraintTimelines.push(f), this._poseTimelines.push(f)
+                        }
                     }
                     for (var o = 0, a = this._armature.animation.getStates(); o < a.length; o++) {
                         var l, h = a[o];
@@ -44665,37 +44665,37 @@
                         if (this.containsBoneMask(l))
                             if (l in e) delete e[l];
                             else if (0 === a._boneData.type) {
-                            var h = this._animationData.getBoneTimelines(l),
-                                c = l in this._bonePoses ? this._bonePoses[l] : this._bonePoses[l] = t.BaseObject.borrowObject(i);
-                            if (null !== h)
-                                for (var u = 0, _ = h; u < _.length; u++) {
-                                    switch ((I = _[u]).type) {
-                                        case 10:
-                                            (v = t.BaseObject.borrowObject(t.BoneAllTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v);
-                                            break;
-                                        case 11:
-                                            (v = t.BaseObject.borrowObject(t.BoneTranslateTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v);
-                                            break;
-                                        case 12:
-                                            (v = t.BaseObject.borrowObject(t.BoneRotateTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v);
-                                            break;
-                                        case 13:
-                                            (v = t.BaseObject.borrowObject(t.BoneScaleTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v)
-                                    }
-                                } else if (this.resetToPose) {
+                                var h = this._animationData.getBoneTimelines(l),
+                                    c = l in this._bonePoses ? this._bonePoses[l] : this._bonePoses[l] = t.BaseObject.borrowObject(i);
+                                if (null !== h)
+                                    for (var u = 0, _ = h; u < _.length; u++) {
+                                        switch ((I = _[u]).type) {
+                                            case 10:
+                                                (v = t.BaseObject.borrowObject(t.BoneAllTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v);
+                                                break;
+                                            case 11:
+                                                (v = t.BaseObject.borrowObject(t.BoneTranslateTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v);
+                                                break;
+                                            case 12:
+                                                (v = t.BaseObject.borrowObject(t.BoneRotateTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v);
+                                                break;
+                                            case 13:
+                                                (v = t.BaseObject.borrowObject(t.BoneScaleTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, I), this._boneTimelines.push(v)
+                                        }
+                                    } else if (this.resetToPose) {
                                     (v = t.BaseObject.borrowObject(t.BoneAllTimelineState)).bone = a, v.bonePose = c, v.init(this._armature, this, null), this._boneTimelines.push(v), this._poseTimelines.push(v)
                                 }
-                        } else if (1 === a._boneData.type) {
-                            if (null !== (h = this._animationData.getSurfaceTimelines(l)))
-                                for (var f = 0, d = h; f < d.length; f++) {
-                                    switch ((I = d[f]).type) {
-                                        case 50:
-                                            (v = t.BaseObject.borrowObject(t.SurfaceTimelineState)).surface = a, v.init(this._armature, this, I), this._surfaceTimelines.push(v)
-                                    }
-                                } else if (this.resetToPose) {
+                            } else if (1 === a._boneData.type) {
+                                if (null !== (h = this._animationData.getSurfaceTimelines(l)))
+                                    for (var f = 0, d = h; f < d.length; f++) {
+                                        switch ((I = d[f]).type) {
+                                            case 50:
+                                                (v = t.BaseObject.borrowObject(t.SurfaceTimelineState)).surface = a, v.init(this._armature, this, I), this._surfaceTimelines.push(v)
+                                        }
+                                    } else if (this.resetToPose) {
                                     (v = t.BaseObject.borrowObject(t.SurfaceTimelineState)).surface = a, v.init(this._armature, this, null), this._surfaceTimelines.push(v), this._poseTimelines.push(v)
                                 }
-                        }
+                            }
                     }
                     for (var p in e)
                         for (var m = 0, y = e[p]; m < y.length; m++) {
@@ -44869,9 +44869,9 @@
                                         l = this._boneMask.indexOf(a.name);
                                     l >= 0 && n.contains(a) && this._boneMask.splice(l, 1)
                                 } else
-                                    for (var h = 0, c = r; h < c.length; h++) {
-                                        (a = c[h]) !== n && (n.contains(a) || this._boneMask.push(a.name))
-                                    }
+                                for (var h = 0, c = r; h < c.length; h++) {
+                                    (a = c[h]) !== n && (n.contains(a) || this._boneMask.push(a.name))
+                                }
                         }
                     }
                     this._timelineDirty = 1
@@ -45690,7 +45690,7 @@
                 }, r.prototype._samplingEasingCurve = function(t, e) {
                     for (var i = t.length, n = -2, r = 0, s = e.length; r < s; ++r) {
                         for (var o = (r + 1) / (s + 1);
-                            (n + 6 < i ? t[n + 6] : 1) < o;) n += 6;
+                             (n + 6 < i ? t[n + 6] : 1) < o;) n += 6;
                         for (var a = n >= 0 && n + 6 < i, l = a ? t[n] : 0, h = a ? t[n + 1] : 0, c = t[n + 2], u = t[n + 3], _ = t[n + 4], f = t[n + 5], d = a ? t[n + 6] : 1, p = a ? t[n + 7] : 1, m = 0, y = 1; y - m > 1e-4;) {
                             var v = .5 * (y + m);
                             this._getCurvePoint(l, h, c, u, _, f, d, p, v, this._helpPoint), o - this._helpPoint.x > 0 ? m = v : y = v
@@ -45874,15 +45874,15 @@
                                     var u = c[h];
                                     l.addAction(u)
                                 } else if (this._slot.name in this._slotChildActions) {
-                                    var _ = this._skin.getDisplays(this._slot.name);
-                                    if (null === _ ? 0 === this._slot.displayIndex : this._slot.displayIndex === _.length) {
-                                        for (var f = 0, d = this._slotChildActions[this._slot.name]; f < d.length; f++) {
-                                            u = d[f];
-                                            l.addAction(u)
-                                        }
-                                        delete this._slotChildActions[this._slot.name]
+                                var _ = this._skin.getDisplays(this._slot.name);
+                                if (null === _ ? 0 === this._slot.displayIndex : this._slot.displayIndex === _.length) {
+                                    for (var f = 0, d = this._slotChildActions[this._slot.name]; f < d.length; f++) {
+                                        u = d[f];
+                                        l.addAction(u)
                                     }
+                                    delete this._slotChildActions[this._slot.name]
                                 }
+                            }
                             break;
                         case 2:
                             var p = o = t.BaseObject.borrowObject(t.MeshDisplayData);
@@ -46930,10 +46930,10 @@
                     if (u = (_ = n[p])._color, _._visible && _._displayData)
                         if (e ? _._mulMat(_._worldMatrix, e, _._matrix) : c.copy(_._worldMatrix, _._matrix), _.childArmature) this.realTimeTraverse(_.childArmature, _._worldMatrix, i * u.a / 255);
                         else if (a = j(_.getTexture(), _._blendMode)) {
-                    (g || a._hash !== A.material._hash) && (g = !1, A._flush(), A.node = b, A.material = a), W(u, i), f = _._worldMatrix.m, l = _._localVertices, E = l.length >> 2, h = _._indices, M = h.length, d = x.request(E, M), S = d.indiceOffset, T = d.byteOffset >> 2, w = d.vertexOffset, r = x._vData, s = x._iData, o = x._uintVData, N = f[0], V = f[4], k = f[12], G = f[1], U = f[5], z = f[13];
-                    for (var y = 0, v = l.length; y < v;) D = l[y++], B = l[y++], r[T++] = D * N + B * V + k, r[T++] = D * G + B * U + z, r[T++] = l[y++], r[T++] = l[y++], o[T++] = I;
-                    for (var C = 0, P = h.length; C < P; C++) s[S++] = w + h[C]
-                }
+                            (g || a._hash !== A.material._hash) && (g = !1, A._flush(), A.node = b, A.material = a), W(u, i), f = _._worldMatrix.m, l = _._localVertices, E = l.length >> 2, h = _._indices, M = h.length, d = x.request(E, M), S = d.indiceOffset, T = d.byteOffset >> 2, w = d.vertexOffset, r = x._vData, s = x._iData, o = x._uintVData, N = f[0], V = f[4], k = f[12], G = f[1], U = f[5], z = f[13];
+                            for (var y = 0, v = l.length; y < v;) D = l[y++], B = l[y++], r[T++] = D * N + B * V + k, r[T++] = D * G + B * U + z, r[T++] = l[y++], r[T++] = l[y++], o[T++] = I;
+                            for (var C = 0, P = h.length; C < P; C++) s[S++] = w + h[C]
+                        }
             }, e.prototype.cacheTraverse = function(t, e) {
                 if (t) {
                     var i = t.segments;
@@ -47918,7 +47918,7 @@
                                                 var T = A[C];
                                                 x[C] = T + (b[C] - T) * a
                                             } else
-                                                for (var S = 0; S < d; S++) x[S] = b[S] * a
+                                            for (var S = 0; S < d; S++) x[S] = b[S] * a
                                     } else
                                         for (var w = 0; w < d; w++) x[w] += (b[w] - x[w]) * a
                                 } else {
@@ -47932,20 +47932,20 @@
                                             var R = M[P];
                                             x[P] = R + (D[P] - R) * I
                                         } else if (l == e.setup) {
-                                            if (null == (m = u).bones)
-                                                for (var O = m.vertices, L = 0; L < d; L++) {
-                                                    R = M[L], T = O[L];
-                                                    x[L] = T + (R + (D[L] - R) * I - T) * a
-                                                } else
-                                                    for (var F = 0; F < d; F++) {
-                                                        R = M[F];
-                                                        x[F] = (R + (D[F] - R) * I) * a
-                                                    }
-                                        } else
-                                            for (var N = 0; N < d; N++) {
-                                                R = M[N];
-                                                x[N] += (R + (D[N] - R) * I - x[N]) * a
+                                        if (null == (m = u).bones)
+                                            for (var O = m.vertices, L = 0; L < d; L++) {
+                                                R = M[L], T = O[L];
+                                                x[L] = T + (R + (D[L] - R) * I - T) * a
+                                            } else
+                                            for (var F = 0; F < d; F++) {
+                                                R = M[F];
+                                                x[F] = (R + (D[F] - R) * I) * a
                                             }
+                                    } else
+                                        for (var N = 0; N < d; N++) {
+                                            R = M[N];
+                                            x[N] += (R + (D[N] - R) * I - x[N]) * a
+                                        }
                                 }
                             }
                         }
@@ -48020,18 +48020,18 @@
                     var u = this.frames,
                         _ = t.ikConstraints[this.ikConstraintIndex];
                     if (r < u[0]) switch (h) {
-                            case e.setup:
-                                return _.mix = _.data.mix, void(_.bendDirection = _.data.bendDirection);
-                            case e.current:
-                                _.mix += (_.data.mix - _.mix) * l, _.bendDirection = _.data.bendDirection
-                        } else if (r >= u[u.length - a.ENTRIES]) h == e.setup ? (_.mix = _.data.mix + (u[u.length + a.PREV_MIX] - _.data.mix) * l, _.bendDirection = c == i.out ? _.data.bendDirection : u[u.length + a.PREV_BEND_DIRECTION]) : (_.mix += (u[u.length + a.PREV_MIX] - _.mix) * l, c == i.in && (_.bendDirection = u[u.length + a.PREV_BEND_DIRECTION]));
-                        else {
-                            var f = s.binarySearch(u, r, a.ENTRIES),
-                                d = u[f + a.PREV_MIX],
-                                p = u[f],
-                                m = this.getCurvePercent(f / a.ENTRIES - 1, 1 - (r - p) / (u[f + a.PREV_TIME] - p));
-                            h == e.setup ? (_.mix = _.data.mix + (d + (u[f + a.MIX] - d) * m - _.data.mix) * l, _.bendDirection = c == i.out ? _.data.bendDirection : u[f + a.PREV_BEND_DIRECTION]) : (_.mix += (d + (u[f + a.MIX] - d) * m - _.mix) * l, c == i.in && (_.bendDirection = u[f + a.PREV_BEND_DIRECTION]))
-                        }
+                        case e.setup:
+                            return _.mix = _.data.mix, void(_.bendDirection = _.data.bendDirection);
+                        case e.current:
+                            _.mix += (_.data.mix - _.mix) * l, _.bendDirection = _.data.bendDirection
+                    } else if (r >= u[u.length - a.ENTRIES]) h == e.setup ? (_.mix = _.data.mix + (u[u.length + a.PREV_MIX] - _.data.mix) * l, _.bendDirection = c == i.out ? _.data.bendDirection : u[u.length + a.PREV_BEND_DIRECTION]) : (_.mix += (u[u.length + a.PREV_MIX] - _.mix) * l, c == i.in && (_.bendDirection = u[u.length + a.PREV_BEND_DIRECTION]));
+                    else {
+                        var f = s.binarySearch(u, r, a.ENTRIES),
+                            d = u[f + a.PREV_MIX],
+                            p = u[f],
+                            m = this.getCurvePercent(f / a.ENTRIES - 1, 1 - (r - p) / (u[f + a.PREV_TIME] - p));
+                        h == e.setup ? (_.mix = _.data.mix + (d + (u[f + a.MIX] - d) * m - _.data.mix) * l, _.bendDirection = c == i.out ? _.data.bendDirection : u[f + a.PREV_BEND_DIRECTION]) : (_.mix += (d + (u[f + a.MIX] - d) * m - _.mix) * l, c == i.in && (_.bendDirection = u[f + a.PREV_BEND_DIRECTION]))
+                    }
                 }, a.ENTRIES = 3, a.PREV_TIME = -3, a.PREV_MIX = -2, a.PREV_BEND_DIRECTION = -1, a.MIX = 1, a.BEND_DIRECTION = 2, a
             })(o);
             t.IkConstraintTimeline = v;
@@ -48628,23 +48628,23 @@
                             return s.errors[i] = "Couldn't load texture atlas " + i + ": " + h.message, r && r(i, "Couldn't load texture atlas " + i + ": " + h.message), s.toLoad--, void s.loaded++
                         }
                         for (var c = function(h) {
-                                var c = !1;
-                                s.loadTexture(h, (function(h, u) {
-                                    if (a.count++, a.count == l.length)
-                                        if (c) s.errors[i] = "Couldn't load texture atlas page " + h + "} of atlas " + i, r && r(i, "Couldn't load texture atlas page " + h + " of atlas " + i), s.toLoad--, s.loaded++;
-                                        else try {
-                                            var _ = new t.TextureAtlas(e, function(t) {
-                                                return s.get(o + "/" + t)
-                                            });
-                                            s.assets[i] = _, n && n(i, _), s.toLoad--, s.loaded++
-                                        } catch (t) {
-                                            var f = t;
-                                            s.errors[i] = "Couldn't load texture atlas " + i + ": " + f.message, r && r(i, "Couldn't load texture atlas " + i + ": " + f.message), s.toLoad--, s.loaded++
-                                        }
-                                }), (function(t, e) {
-                                    c = !0, a.count++, a.count == l.length && (s.errors[i] = "Couldn't load texture atlas page " + t + "} of atlas " + i, r && r(i, "Couldn't load texture atlas page " + t + " of atlas " + i), s.toLoad--, s.loaded++)
-                                }))
-                            }, u = 0, _ = l; u < _.length; u++) {
+                            var c = !1;
+                            s.loadTexture(h, (function(h, u) {
+                                if (a.count++, a.count == l.length)
+                                    if (c) s.errors[i] = "Couldn't load texture atlas page " + h + "} of atlas " + i, r && r(i, "Couldn't load texture atlas page " + h + " of atlas " + i), s.toLoad--, s.loaded++;
+                                    else try {
+                                        var _ = new t.TextureAtlas(e, function(t) {
+                                            return s.get(o + "/" + t)
+                                        });
+                                        s.assets[i] = _, n && n(i, _), s.toLoad--, s.loaded++
+                                    } catch (t) {
+                                        var f = t;
+                                        s.errors[i] = "Couldn't load texture atlas " + i + ": " + f.message, r && r(i, "Couldn't load texture atlas " + i + ": " + f.message), s.toLoad--, s.loaded++
+                                    }
+                            }), (function(t, e) {
+                                c = !0, a.count++, a.count == l.length && (s.errors[i] = "Couldn't load texture atlas page " + t + "} of atlas " + i, r && r(i, "Couldn't load texture atlas page " + t + " of atlas " + i), s.toLoad--, s.loaded++)
+                            }))
+                        }, u = 0, _ = l; u < _.length; u++) {
                             c(_[u])
                         }
                     }), (function(t, e) {
@@ -49358,7 +49358,7 @@
                             var r = e[n];
                             this.sortBone(r.parent), this._updateCache.indexOf(r) > -1 || this.updateCacheReset.push(r)
                         } else
-                            for (n = 0; n < i; n++) this.sortBone(e[n]);
+                        for (n = 0; n < i; n++) this.sortBone(e[n]);
                     this._updateCache.push(t);
                     for (var s = 0; s < i; s++) this.sortReset(e[s].children);
                     for (s = 0; s < i; s++) e[s].sorted = !0
@@ -50187,9 +50187,9 @@
                     if (t.curve)
                         if ("stepped" === t.curve) e.setStepped(i);
                         else if ("[object Array]" === Object.prototype.toString.call(t.curve)) {
-                        var n = t.curve;
-                        e.setCurve(i, n[0], n[1], n[2], n[3])
-                    }
+                            var n = t.curve;
+                            e.setCurve(i, n[0], n[1], n[2], n[3])
+                        }
                 }, e.prototype.getValue = function(t, e, i) {
                     return void 0 !== t[e] ? t[e] : i
                 }, e.blendModeFromString = function(e) {
@@ -50593,8 +50593,8 @@
                                 break
                             }
                             h = s,
-                            s = c,
-                            c = (c + 1) % n
+                                s = c,
+                                c = (c + 1) % n
                         }
                         l.push(r[(n + s - 1) % n]), l.push(r[s]), l.push(r[(s + 1) % n]), r.splice(s, 1), o.splice(s, 1);
                         var T = (--n + s - 1) % n,
@@ -50891,14 +50891,14 @@
                                 }
                                 n[M] = d, n[M + 1] = p
                             } else
-                                for (var v = a, g = (M = r, T = 3 * u, u << 1); M < i; M += s) {
-                                    d = 0, p = 0, m = h[c++];
-                                    for (m += c; c < m; c++, T += 3, g += 2) {
-                                        x = f[h[c]], D = l[T] + v[g], B = l[T + 1] + v[g + 1], y = l[T + 2];
-                                        d += (D * x.a + B * x.b + x.worldX) * y, p += (D * x.c + B * x.d + x.worldY) * y
-                                    }
-                                    n[M] = d, n[M + 1] = p
+                            for (var v = a, g = (M = r, T = 3 * u, u << 1); M < i; M += s) {
+                                d = 0, p = 0, m = h[c++];
+                                for (m += c; c < m; c++, T += 3, g += 2) {
+                                    x = f[h[c]], D = l[T] + v[g], B = l[T + 1] + v[g + 1], y = l[T + 2];
+                                    d += (D * x.a + B * x.b + x.worldX) * y, p += (D * x.c + B * x.d + x.worldY) * y
                                 }
+                                n[M] = d, n[M + 1] = p
+                            }
                     } else {
                         a.length > 0 && (l = a);
                         for (var x, b = (x = t.bone).worldX, A = x.worldY, C = x.a, T = x.b, S = x.c, w = x.d, E = e, M = r; M < i; E += 2, M += s) {
@@ -51216,26 +51216,26 @@
                         if (M = t.drawOrder[D], y = 0, v = 0, d = M.getAttachment())
                             if (b = d instanceof r.RegionAttachment, A = d instanceof r.MeshAttachment, d instanceof r.ClippingAttachment) e.clipStart(M, d);
                             else if (b || A)
-                        if (C = d.region.texture._texture)
-                            if (w = M.data.blendMode, h === C.url && c === w || (h = C.url, c = w, (T = f - 1) >= 0 && (_ > 0 ? ((S = i[T]).indexCount = _, S.vertexCount = u, S.vfCount = 6 * u) : f--), i[f] = {
-                                    tex: C,
-                                    blendMode: w,
-                                    indexCount: 0,
-                                    vertexCount: 0,
-                                    vfCount: 0
-                                }, f++, _ = 0, u = 0), b ? (x = E, y = 24, v = 6, d.computeWorldVertices(M.bone, s, l, 6)) : A && (x = d.triangles, y = 6 * (d.worldVerticesLength >> 1), v = x.length, d.computeWorldVertices(M, 0, d.worldVerticesLength, s, l, 6)), 0 != y && 0 != v) {
-                                for (var I = 0, P = a, R = x.length; I < R;) o[P++] = x[I++];
-                                g = d.uvs;
-                                for (var O = l, L = l + y, F = 0; O < L; O += 6, F += 2) s[O + 2] = g[F], s[O + 3] = g[F + 1];
-                                if (p = d.color, m = M.color, this.fillVertices(n, p, m, e, M), v > 0) {
-                                    for (var N = a, V = a + v; N < V; N++) o[N] += u;
-                                    a += v, (l += y) / 6, _ += v, u += y / 6
-                                }
-                                e.clipEndWithSlot(M)
-                            } else e.clipEndWithSlot(M);
-                    else e.clipEndWithSlot(M);
-                    else e.clipEndWithSlot(M);
-                    else e.clipEndWithSlot(M);
+                                if (C = d.region.texture._texture)
+                                    if (w = M.data.blendMode, h === C.url && c === w || (h = C.url, c = w, (T = f - 1) >= 0 && (_ > 0 ? ((S = i[T]).indexCount = _, S.vertexCount = u, S.vfCount = 6 * u) : f--), i[f] = {
+                                        tex: C,
+                                        blendMode: w,
+                                        indexCount: 0,
+                                        vertexCount: 0,
+                                        vfCount: 0
+                                    }, f++, _ = 0, u = 0), b ? (x = E, y = 24, v = 6, d.computeWorldVertices(M.bone, s, l, 6)) : A && (x = d.triangles, y = 6 * (d.worldVerticesLength >> 1), v = x.length, d.computeWorldVertices(M, 0, d.worldVerticesLength, s, l, 6)), 0 != y && 0 != v) {
+                                        for (var I = 0, P = a, R = x.length; I < R;) o[P++] = x[I++];
+                                        g = d.uvs;
+                                        for (var O = l, L = l + y, F = 0; O < L; O += 6, F += 2) s[O + 2] = g[F], s[O + 3] = g[F + 1];
+                                        if (p = d.color, m = M.color, this.fillVertices(n, p, m, e, M), v > 0) {
+                                            for (var N = a, V = a + v; N < V; N++) o[N] += u;
+                                            a += v, (l += y) / 6, _ += v, u += y / 6
+                                        }
+                                        e.clipEndWithSlot(M)
+                                    } else e.clipEndWithSlot(M);
+                                else e.clipEndWithSlot(M);
+                            else e.clipEndWithSlot(M);
+                        else e.clipEndWithSlot(M);
                     e.clipEnd()
                 }
             }),
@@ -51379,8 +51379,8 @@
                         n = i.length;
                     if (0 != n)
                         for (var r = 0, s = function() {
-                                ++r >= n && (t && t.call(e, !0), t = null)
-                            }, o = 0; o < n; o++) {
+                            ++r >= n && (t && t.call(e, !0), t = null)
+                        }, o = 0; o < n; o++) {
                             var a = i[o];
                             a.loaded ? s() : a.once("load", s)
                         } else t.call(e, !1)
@@ -51631,39 +51631,39 @@
                         if (E >= 0 && E == A.data.index && (K = !1), U = 0, H = 0, h = A.getAttachment())
                             if (d = h instanceof l.RegionAttachment, x = h instanceof l.MeshAttachment, h instanceof l.ClippingAttachment) o.clipStart(A, h);
                             else if (d || x)
-                    if (a = Ct(h.region.texture._texture, A.data.blendMode)) {
-                        if ((Q || a._hash !== gt.material._hash) && (Q = !1, gt._flush(), gt.node = xt, gt.material = a), d) {
-                            if (f = p, U = 4 * k, H = 6, b = vt.request(4, 6), X = b.indiceOffset, W = b.vertexOffset, j = b.byteOffset >> 2, e = vt._vData, i = vt._iData, h.computeWorldVertices(A.bone, e, j, k), s && D) {
-                                s.strokeColor = m, s.moveTo(e[j], e[j + 1]);
-                                for (var P = j + k, R = j + U; P < R; P += k) s.lineTo(e[P], e[P + 1]);
-                                s.close(), s.stroke()
-                            }
-                        } else if (x && (f = h.triangles, U = (h.worldVerticesLength >> 1) * k, H = f.length, b = vt.request(U / k, H), X = b.indiceOffset, W = b.vertexOffset, j = b.byteOffset >> 2, e = vt._vData, i = vt._iData, h.computeWorldVertices(A, 0, h.worldVerticesLength, e, j, k), s && I)) {
-                            s.strokeColor = g;
-                            for (var O = 0, L = f.length; O < L; O += 3) {
-                                var F = f[O] * k + j,
-                                    N = f[O + 1] * k + j,
-                                    V = f[O + 2] * k + j;
-                                s.moveTo(e[F], e[F + 1]), s.lineTo(e[N], e[N + 1]), s.lineTo(e[V], e[V + 1]), s.close(), s.stroke()
-                            }
-                        }
-                        if (0 != U && 0 != H) {
-                            i.set(f, X), _ = h.uvs;
-                            for (var z = j, Y = j + U, q = 0; z < Y; z += k, q += 2) e[z + 2] = _[q], e[z + 3] = _[q + 1];
-                            if (c = h.color, u = A.color, this.fillVertices(r, c, u, o, A), H > 0) {
-                                for (var J = X, Z = X + H; J < Z; J++) i[J] += W;
-                                if (t) {
-                                    C = t.m, et = C[0], it = C[4], nt = C[12], rt = C[1], st = C[5], ot = C[13];
-                                    for (var at = j, lt = j + U; at < lt; at += k) $ = e[at], tt = e[at + 1], e[at] = $ * et + tt * it + nt, e[at + 1] = $ * rt + tt * st + ot
-                                }
-                                vt.adjust(U / k, H)
-                            }
-                            o.clipEndWithSlot(A)
-                        } else o.clipEndWithSlot(A)
-                    } else o.clipEndWithSlot(A);
-                else o.clipEndWithSlot(A);
-                else o.clipEndWithSlot(A);
-                else o.clipEndWithSlot(A);
+                                if (a = Ct(h.region.texture._texture, A.data.blendMode)) {
+                                    if ((Q || a._hash !== gt.material._hash) && (Q = !1, gt._flush(), gt.node = xt, gt.material = a), d) {
+                                        if (f = p, U = 4 * k, H = 6, b = vt.request(4, 6), X = b.indiceOffset, W = b.vertexOffset, j = b.byteOffset >> 2, e = vt._vData, i = vt._iData, h.computeWorldVertices(A.bone, e, j, k), s && D) {
+                                            s.strokeColor = m, s.moveTo(e[j], e[j + 1]);
+                                            for (var P = j + k, R = j + U; P < R; P += k) s.lineTo(e[P], e[P + 1]);
+                                            s.close(), s.stroke()
+                                        }
+                                    } else if (x && (f = h.triangles, U = (h.worldVerticesLength >> 1) * k, H = f.length, b = vt.request(U / k, H), X = b.indiceOffset, W = b.vertexOffset, j = b.byteOffset >> 2, e = vt._vData, i = vt._iData, h.computeWorldVertices(A, 0, h.worldVerticesLength, e, j, k), s && I)) {
+                                        s.strokeColor = g;
+                                        for (var O = 0, L = f.length; O < L; O += 3) {
+                                            var F = f[O] * k + j,
+                                                N = f[O + 1] * k + j,
+                                                V = f[O + 2] * k + j;
+                                            s.moveTo(e[F], e[F + 1]), s.lineTo(e[N], e[N + 1]), s.lineTo(e[V], e[V + 1]), s.close(), s.stroke()
+                                        }
+                                    }
+                                    if (0 != U && 0 != H) {
+                                        i.set(f, X), _ = h.uvs;
+                                        for (var z = j, Y = j + U, q = 0; z < Y; z += k, q += 2) e[z + 2] = _[q], e[z + 3] = _[q + 1];
+                                        if (c = h.color, u = A.color, this.fillVertices(r, c, u, o, A), H > 0) {
+                                            for (var J = X, Z = X + H; J < Z; J++) i[J] += W;
+                                            if (t) {
+                                                C = t.m, et = C[0], it = C[4], nt = C[12], rt = C[1], st = C[5], ot = C[13];
+                                                for (var at = j, lt = j + U; at < lt; at += k) $ = e[at], tt = e[at + 1], e[at] = $ * et + tt * it + nt, e[at + 1] = $ * rt + tt * st + ot
+                                            }
+                                            vt.adjust(U / k, H)
+                                        }
+                                        o.clipEndWithSlot(A)
+                                    } else o.clipEndWithSlot(A)
+                                } else o.clipEndWithSlot(A);
+                            else o.clipEndWithSlot(A);
+                        else o.clipEndWithSlot(A);
+                    else o.clipEndWithSlot(A);
                 if (o.clipEnd(), s && B) {
                     var ht = void 0;
                     s.strokeColor = y, s.fillColor = m;
@@ -53176,20 +53176,20 @@
                         var e = this;
                         this.m_pairCount = 0;
                         for (var i = function(t) {
-                                var i = n.m_moveBuffer[t];
-                                if (null === i) return "continue";
-                                var r = i.aabb;
-                                n.m_tree.Query(r, (function(t) {
-                                    if (t.m_id === i.m_id) return !0;
-                                    var n, r;
-                                    if (t.m_id < i.m_id ? (n = t, r = i) : (n = i, r = t), e.m_pairCount === e.m_pairBuffer.length) e.m_pairBuffer[e.m_pairCount] = new Ft(n, r);
-                                    else {
-                                        var s = e.m_pairBuffer[e.m_pairCount];
-                                        s.proxyA = n, s.proxyB = r
-                                    }
-                                    return ++e.m_pairCount, !0
-                                }))
-                            }, n = this, r = 0; r < this.m_moveCount; ++r) i(r);
+                            var i = n.m_moveBuffer[t];
+                            if (null === i) return "continue";
+                            var r = i.aabb;
+                            n.m_tree.Query(r, (function(t) {
+                                if (t.m_id === i.m_id) return !0;
+                                var n, r;
+                                if (t.m_id < i.m_id ? (n = t, r = i) : (n = i, r = t), e.m_pairCount === e.m_pairBuffer.length) e.m_pairBuffer[e.m_pairCount] = new Ft(n, r);
+                                else {
+                                    var s = e.m_pairBuffer[e.m_pairCount];
+                                    s.proxyA = n, s.proxyB = r
+                                }
+                                return ++e.m_pairCount, !0
+                            }))
+                        }, n = this, r = 0; r < this.m_moveCount; ++r) i(r);
                         this.m_moveCount = 0, this.m_pairBuffer.length = this.m_pairCount, this.m_pairBuffer.sort(Vt);
                         for (var s = 0; s < this.m_pairCount;) {
                             var o = this.m_pairBuffer[s],
@@ -53766,13 +53766,13 @@
                     }, e
                 })(),
                 Qe = Object.setPrototypeOf || {
-                    __proto__: []
-                }
-            instanceof Array && function(t, e) {
-                t.__proto__ = e
-            } || function(t, e) {
-                for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i])
-            };
+                        __proto__: []
+                    }
+                    instanceof Array && function(t, e) {
+                        t.__proto__ = e
+                    } || function(t, e) {
+                        for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i])
+                    };
 
             function $e(t, e) {
                 function i() {
@@ -57051,7 +57051,7 @@
                         if (t.IsSensor()) return !0;
                         for (var e = t.GetShape().GetChildCount(), i = 0; i < e; i++)
                             for (var n = t.GetAABB(i), r = this.m_system.GetInsideBoundsEnumerator(n), s = void 0;
-                                (s = r.GetNext()) >= 0;) this.ReportFixtureAndParticle(t, i, s);
+                                 (s = r.GetNext()) >= 0;) this.ReportFixtureAndParticle(t, i, s);
                         return !0
                     }, e.prototype.ReportParticle = function(t, e) {
                         return !1
@@ -57398,7 +57398,7 @@
                             c = r;
                         P.MinV(e, i, c.lowerBound), P.MaxV(e, i, c.upperBound);
                         for (var u, _ = 1, f = P.SubVV(i, e, o), d = P.DotVV(f, f), p = this.GetInsideBoundsEnumerator(c);
-                            (u = p.GetNext()) >= 0;) {
+                             (u = p.GetNext()) >= 0;) {
                             var m = P.SubVV(e, h[u], s),
                                 y = P.DotVV(m, f),
                                 v = y * y - d * (P.DotVV(m, m) - this.m_squaredDiameter);
@@ -57867,7 +57867,7 @@
                                 E = i;
                             P.MinV(T, w, E.lowerBound), P.MaxV(T, w, E.upperBound);
                             for (var M = this.m_groupBuffer[A], D = this.m_groupBuffer[C], B = this.GetLinearVelocity(M, A, T, r), I = this.GetLinearVelocity(D, C, w, s), R = P.SubVV(w, T, o), O = P.SubVV(I, B, a), L = this.GetInsideBoundsEnumerator(E), F = void 0;
-                                (F = L.GetNext()) >= 0;) {
+                                 (F = L.GetNext()) >= 0;) {
                                 var N = p[F],
                                     V = this.m_groupBuffer[F];
                                 if (M !== V && D !== V) {
@@ -58306,16 +58306,16 @@
                         }
                     }
                     for (var l = function(t) {
-                            return t.index < 0
-                        }, h = function(t) {
-                            return t.indexA < 0 || t.indexB < 0
-                        }, c = function(t) {
-                            return t.index < 0
-                        }, _ = function(t) {
-                            return t.indexA < 0 || t.indexB < 0
-                        }, f = function(t) {
-                            return t.indexA < 0 || t.indexB < 0 || t.indexC < 0
-                        }, d = 0; d < this.m_proxyBuffer.count; d++) {
+                        return t.index < 0
+                    }, h = function(t) {
+                        return t.indexA < 0 || t.indexB < 0
+                    }, c = function(t) {
+                        return t.index < 0
+                    }, _ = function(t) {
+                        return t.indexA < 0 || t.indexB < 0
+                    }, f = function(t) {
+                        return t.indexA < 0 || t.indexB < 0 || t.indexC < 0
+                    }, d = 0; d < this.m_proxyBuffer.count; d++) {
                         var p = this.m_proxyBuffer.data[d];
                         p.index = i[p.index]
                     }
@@ -58916,9 +58916,9 @@
                         }
                     }, e.prototype.QueryAABB = function(t, e, i) {
                         if (this.m_contactManager.m_broadPhase.Query(e, (function(e) {
-                                var n = e.userData.fixture;
-                                return t ? t.ReportFixture(n) : !i || i(n)
-                            })), t instanceof en)
+                            var n = e.userData.fixture;
+                            return t ? t.ReportFixture(n) : !i || i(n)
+                        })), t instanceof en)
                             for (var n = this.m_particleSystemList; n; n = n.m_next) t.ShouldQueryParticleSystem(n) && n.QueryAABB(t, e)
                     }, e.prototype.QueryAllAABB = function(t, e) {
                         return void 0 === e && (e = []), this.QueryAABB(null, t, (function(t) {
@@ -58926,9 +58926,9 @@
                         })), e
                     }, e.prototype.QueryPointAABB = function(t, e, i) {
                         if (this.m_contactManager.m_broadPhase.QueryPoint(e, (function(e) {
-                                var n = e.userData.fixture;
-                                return t ? t.ReportFixture(n) : !i || i(n)
-                            })), t instanceof en)
+                            var n = e.userData.fixture;
+                            return t ? t.ReportFixture(n) : !i || i(n)
+                        })), t instanceof en)
                             for (var n = this.m_particleSystemList; n; n = n.m_next) t.ShouldQueryParticleSystem(n) && n.QueryPointAABB(t, e)
                     }, e.prototype.QueryAllPointAABB = function(t, e) {
                         return void 0 === e && (e = []), this.QueryPointAABB(null, t, (function(t) {
@@ -58937,14 +58937,14 @@
                     }, e.prototype.QueryFixtureShape = function(t, i, n, r, s) {
                         var o = e.QueryFixtureShape_s_aabb;
                         if (i.ComputeAABB(o, r, n), this.m_contactManager.m_broadPhase.Query(o, (function(e) {
-                                var o = e.userData,
-                                    a = o.fixture;
-                                if (Pt(i, n, a.GetShape(), o.childIndex, r, a.GetBody().GetTransform())) {
-                                    if (t) return t.ReportFixture(a);
-                                    if (s) return s(a)
-                                }
-                                return !0
-                            })), t instanceof en)
+                            var o = e.userData,
+                                a = o.fixture;
+                            if (Pt(i, n, a.GetShape(), o.childIndex, r, a.GetBody().GetTransform())) {
+                                if (t) return t.ReportFixture(a);
+                                if (s) return s(a)
+                            }
+                            return !0
+                        })), t instanceof en)
                             for (var a = this.m_particleSystemList; a; a = a.m_next) t.ShouldQueryParticleSystem(a) && a.QueryAABB(t, o)
                     }, e.prototype.QueryAllFixtureShape = function(t, e, i, n) {
                         return void 0 === n && (n = []), this.QueryFixtureShape(null, t, e, i, (function(t) {
@@ -58952,13 +58952,13 @@
                         })), n
                     }, e.prototype.QueryFixturePoint = function(t, e, i) {
                         if (this.m_contactManager.m_broadPhase.QueryPoint(e, (function(n) {
-                                var r = n.userData.fixture;
-                                if (r.TestPoint(e)) {
-                                    if (t) return t.ReportFixture(r);
-                                    if (i) return i(r)
-                                }
-                                return !0
-                            })), t)
+                            var r = n.userData.fixture;
+                            if (r.TestPoint(e)) {
+                                if (t) return t.ReportFixture(r);
+                                if (i) return i(r)
+                            }
+                            return !0
+                        })), t)
                             for (var n = this.m_particleSystemList; n; n = n.m_next) t.ShouldQueryParticleSystem(n) && n.QueryPointAABB(t, e)
                     }, e.prototype.QueryAllFixturePoint = function(t, e) {
                         return void 0 === e && (e = []), this.QueryFixturePoint(null, t, (function(t) {
@@ -58967,18 +58967,18 @@
                     }, e.prototype.RayCast = function(t, i, n, r) {
                         var s = e.RayCast_s_input;
                         if (s.maxFraction = 1, s.p1.Copy(i), s.p2.Copy(n), this.m_contactManager.m_broadPhase.RayCast(s, (function(s, o) {
-                                var a = o.userData,
-                                    l = a.fixture,
-                                    h = a.childIndex,
-                                    c = e.RayCast_s_output;
-                                if (l.RayCast(c, s, h)) {
-                                    var u = c.fraction,
-                                        _ = e.RayCast_s_point;
-                                    if (_.Set((1 - u) * i.x + u * n.x, (1 - u) * i.y + u * n.y), t) return t.ReportFixture(l, _, c.normal, u);
-                                    if (r) return r(l, _, c.normal, u)
-                                }
-                                return s.maxFraction
-                            })), t)
+                            var a = o.userData,
+                                l = a.fixture,
+                                h = a.childIndex,
+                                c = e.RayCast_s_output;
+                            if (l.RayCast(c, s, h)) {
+                                var u = c.fraction,
+                                    _ = e.RayCast_s_point;
+                                if (_.Set((1 - u) * i.x + u * n.x, (1 - u) * i.y + u * n.y), t) return t.ReportFixture(l, _, c.normal, u);
+                                if (r) return r(l, _, c.normal, u)
+                            }
+                            return s.maxFraction
+                        })), t)
                             for (var o = this.m_particleSystemList; o; o = o.m_next) t.ShouldQueryParticleSystem(o) && o.RayCast(t, i, n)
                     }, e.prototype.RayCastOne = function(t, e) {
                         var i = null,
@@ -59364,14 +59364,14 @@
                                         l = c.GetMass();
                                     if (!((f = (u = a.x - r.x) * u + (_ = a.y - r.y) * _) < n))(d = e.Step_s_f.Set(u, _)).SelfMul(this.G / f / S(f) * s * l), h.IsAwake() && h.ApplyForce(d, r), c.IsAwake() && c.ApplyForce(d.SelfMul(-1), a)
                                 } else
-                                    for (i = this.m_bodyList; i; i = i.nextBody) {
-                                        var h;
-                                        for (r = (h = i.body).GetWorldCenter(), s = h.GetMass(), o = this.m_bodyList; o && o !== i; o = o.nextBody) {
-                                            var c, u, _, f, d;
-                                            a = (c = o.body).GetWorldCenter(), l = c.GetMass();
-                                            if (!((f = (u = a.x - r.x) * u + (_ = a.y - r.y) * _) < n))(d = e.Step_s_f.Set(u, _)).SelfMul(this.G / f * s * l), h.IsAwake() && h.ApplyForce(d, r), c.IsAwake() && c.ApplyForce(d.SelfMul(-1), a)
-                                        }
-                                    }
+                            for (i = this.m_bodyList; i; i = i.nextBody) {
+                                var h;
+                                for (r = (h = i.body).GetWorldCenter(), s = h.GetMass(), o = this.m_bodyList; o && o !== i; o = o.nextBody) {
+                                    var c, u, _, f, d;
+                                    a = (c = o.body).GetWorldCenter(), l = c.GetMass();
+                                    if (!((f = (u = a.x - r.x) * u + (_ = a.y - r.y) * _) < n))(d = e.Step_s_f.Set(u, _)).SelfMul(this.G / f * s * l), h.IsAwake() && h.ApplyForce(d, r), c.IsAwake() && c.ApplyForce(d.SelfMul(-1), a)
+                                }
+                            }
                     }, e.prototype.Draw = function(t) {}, e.Step_s_f = new P, e
                 })(zn),
                 Yn = (function(t) {
@@ -59634,12 +59634,12 @@
     425: [(function(t, e, i) {
         "use strict";
         if (Math.sign || (Math.sign = function(t) {
-                return 0 === (t = +t) || isNaN(t) ? t : t > 0 ? 1 : -1
-            }), Math.log2 || (Math.log2 = function(t) {
-                return Math.log(t) * Math.LOG2E
-            }), Number.isInteger || (Number.isInteger = function(t) {
-                return "number" == typeof t && isFinite(t) && Math.floor(t) === t
-            }), !console.time) {
+            return 0 === (t = +t) || isNaN(t) ? t : t > 0 ? 1 : -1
+        }), Math.log2 || (Math.log2 = function(t) {
+            return Math.log(t) * Math.LOG2E
+        }), Number.isInteger || (Number.isInteger = function(t) {
+            return "number" == typeof t && isFinite(t) && Math.floor(t) === t
+        }), !console.time) {
             var n = window.performance || Date,
                 r = Object.create(null);
             console.time = function(t) {
@@ -59685,13 +59685,13 @@
     429: [(function(t, e, i) {
         "use strict";
         var n = Object.setPrototypeOf || {
-            __proto__: []
-        }
-        instanceof Array && function(t, e) {
-            t.__proto__ = e
-        } || function(t, e) {
-            for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i])
-        };
+                __proto__: []
+            }
+            instanceof Array && function(t, e) {
+                t.__proto__ = e
+            } || function(t, e) {
+                for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i])
+            };
         window.__extends = function(t, e) {
             function i() {
                 this.constructor = t

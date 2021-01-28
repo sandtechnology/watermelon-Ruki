@@ -688,13 +688,13 @@ window.__require = function e(t, n, o) {
                     }
                 }, t.prototype.StarBoom = function(e) {
                     for (var t = function(t) {
-                            var o = i.default.Spawn("lightEffect").getComponent("EffectSprite");
-                            o.node.parent = n.bgEffectParent, o.node.position = e, o.Reset(), o.SetSprite(r.default.Instance.GetSpriteFrame("star"), cc.v2(32, 32)), o.node.color = new cc.Color(254, 236, 180);
-                            var c = cc.v2(0, 100).rotate(a.default.AngleToRadian(30 * t));
-                            o.node.runAction(cc.sequence(cc.moveBy(.45, c), cc.callFunc(function() {
-                                i.default.Despawn("lightEffect", o.node)
-                            }, n))), o.node.runAction(cc.rotateBy(.45, 360)), o.node.runAction(cc.sequence(cc.delayTime(.225), cc.scaleTo(.225, .4)))
-                        }, n = this, o = 0; o < 12; o++) t(o)
+                        var o = i.default.Spawn("lightEffect").getComponent("EffectSprite");
+                        o.node.parent = n.bgEffectParent, o.node.position = e, o.Reset(), o.SetSprite(r.default.Instance.GetSpriteFrame("star"), cc.v2(32, 32)), o.node.color = new cc.Color(254, 236, 180);
+                        var c = cc.v2(0, 100).rotate(a.default.AngleToRadian(30 * t));
+                        o.node.runAction(cc.sequence(cc.moveBy(.45, c), cc.callFunc(function() {
+                            i.default.Despawn("lightEffect", o.node)
+                        }, n))), o.node.runAction(cc.rotateBy(.45, 360)), o.node.runAction(cc.sequence(cc.delayTime(.225), cc.scaleTo(.225, .4)))
+                    }, n = this, o = 0; o < 12; o++) t(o)
                 }, t.prototype.GhostBornEff = function(e) {
                     for (var t = a.default.RandomInteger(100, 101), n = 0; n < t; n++) {
                         var o = i.default.Spawn("EffectSprite").getComponent("EffectSprite");
@@ -964,11 +964,10 @@ window.__require = function e(t, n, o) {
             i = e("../Common/Utils"),
             r = e("./MainGameUi"),
             s = e("../common/PlayerInfo"),
-            l = e("../common/DynamicLoad"),
-            u = cc._decorator,
-            d = u.ccclass,
-            p = u.property,
-            f = function(e) {
+            l = cc._decorator,
+            u = l.ccclass,
+            d = l.property,
+            p = function(e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.clickMask = null, t.failedUiBox = null, t.di = null, t.levelTxt = null, t.guan = null, t.continueTip = null, t.scoreLabel = null, t.highScoreNode = null, t.highScore = null, t.highScoreLabel = null, t.resultTxt = null, t.overTxt = null, t.moreGameBtn = null, t.reStartBtn = null, t.failedBoxPos = cc.v2(0, -500), t.standardScore = 0, t.canClick = !1, t.bgMask = null, t.bencichengji = null, t.bencichengjiarr = [], t.gengduoyouxi = null, t.gengduoyouxiarr = [], t.adsButton2 = null, t.bannerButton = null, t
@@ -977,21 +976,20 @@ window.__require = function e(t, n, o) {
                 return o(t, e), n = t, t.prototype.onLoad = function() {
                     null != n.Instance && n.Instance.destroy(), n.Instance = this, this.clickMask.setContentSize(cc.winSize.width, cc.winSize.height), this.bgMask.setContentSize(cc.winSize.width, cc.winSize.height), this.failedUiBox.y = cc.winSize.height / 2 + this.failedUiBox.height / 2
                 }, t.prototype.start = function() {
-                    var e = this,
-                        t = i.default.returnCurrentLanType();
-                    1 != t && (this.bencichengji.getComponent(cc.Sprite).spriteFrame = this.bencichengjiarr[t - 1], this.gengduoyouxi.getComponent(cc.Sprite).spriteFrame = this.gengduoyouxiarr[t - 1]), this.continueTip.getComponent(cc.Label).string = 1 == t ? "\u70b9\u51fb\u7ee7\u7eed" : 2 == t ? "\u9ede\u64ca\u7e7c\u7e8c" : 4 == t ? "\ud074\ub9ad \ud558\uc5ec \uacc4\uc18d" : "Click Continue", this.reStartBtn.runAction(cc.repeatForever(cc.sequence(cc.scaleTo(.5, 1.1), cc.scaleTo(.55, 1), cc.delayTime(.5)))), cc.tween(this.moreGameBtn).to(.5, {
+                    var e = i.default.returnCurrentLanType();
+                    1 != e && (this.bencichengji.getComponent(cc.Sprite).spriteFrame = this.bencichengjiarr[e - 1], this.gengduoyouxi.getComponent(cc.Sprite).spriteFrame = this.gengduoyouxiarr[e - 1]), this.continueTip.getComponent(cc.Label).string = 1 == e ? "\u70b9\u51fb\u7ee7\u7eed" : 2 == e ? "\u9ede\u64ca\u7e7c\u7e8c" : 4 == e ? "\ud074\ub9ad \ud558\uc5ec \uacc4\uc18d" : "Click Continue", this.reStartBtn.runAction(cc.repeatForever(cc.sequence(cc.scaleTo(.5, 1.1), cc.scaleTo(.55, 1), cc.delayTime(.5)))), cc.tween(this.moreGameBtn).to(.5, {
                         scale: 1.1
                     }).to(.5, {
                         scale: 1
-                    }).union().repeatForever().start(), cc.tween(this.adsButton2).call(function() {
-                        e.adsButton2.children[0].getComponent(cc.Sprite).spriteFrame = l.default.Instance.adsbutton2[0]
-                    }).delay(.5).call(function() {
-                        e.adsButton2.children[0].getComponent(cc.Sprite).spriteFrame = l.default.Instance.adsbutton2[1]
-                    }).delay(.5).union().repeatForever().start()
+                    }).union().repeatForever().start(), cc.tween(this.adsButton2).to(1, {
+                        scale: .8
+                    }).to(1, {
+                        scale: .9
+                    }).union().repeatForever().start()
                 }, t.prototype.update = function(e) {}, t.prototype.adsButtonFunc2 = function() {
-                    // window.location.href = "https://interaction.clotfun.online/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=189da8b9d29788c1cf058587fa2f7b9c&from=H5&1=1"
+                    //window.location.href = "https://activity.doumobfour.club/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=189da8b9d29788c1cf058587fa2f7b9c&1=1"
                 }, t.prototype.bannerButtonFunc = function() {
-                    // window.location.href = "https://interaction.clotfun.online/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=1baa3dd0d2eeb6e18a5f7a6d6e410e1a&from=H5&1=1"
+                    //window.location.href = "https://interaction.clotfun.online/horse?appkey=8fa2be346ab599d74b7b35732652ab4d&adSpaceKey=1baa3dd0d2eeb6e18a5f7a6d6e410e1a&from=H5&1=1"
                 }, t.prototype.ShowFailedUi = function(e, t) {
                     var n = this;
                     this.scheduleOnce(function() {
@@ -1016,12 +1014,11 @@ window.__require = function e(t, n, o) {
                     t > 94 && (t = 94);
                     var n = 5 + t;
                     return "\u51fb\u8d25\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", ["\u51fb\u8d25\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", "\u64ca\u6557\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", "Beat " + n + " % of global players", "\uc804 \uc138\uacc4" + n + "% \uc758 \uc720 \uc800 \ub97c \uc774 \uacbc \uc2b5 \ub2c8 \ub2e4"][i.default.returnCurrentLanType() - 1]
-                }, t.Instance = null, c([p(cc.Node)], t.prototype, "clickMask", void 0), c([p(cc.Node)], t.prototype, "failedUiBox", void 0), c([p(cc.Node)], t.prototype, "di", void 0), c([p(cc.Label)], t.prototype, "levelTxt", void 0), c([p(cc.Node)], t.prototype, "guan", void 0), c([p(cc.Node)], t.prototype, "continueTip", void 0), c([p(cc.Label)], t.prototype, "scoreLabel", void 0), c([p(cc.Node)], t.prototype, "highScoreNode", void 0), c([p(cc.Node)], t.prototype, "highScore", void 0), c([p(cc.Label)], t.prototype, "highScoreLabel", void 0), c([p(cc.Label)], t.prototype, "resultTxt", void 0), c([p(cc.Label)], t.prototype, "overTxt", void 0), c([p(cc.Node)], t.prototype, "moreGameBtn", void 0), c([p(cc.Node)], t.prototype, "reStartBtn", void 0), c([p(cc.Vec2)], t.prototype, "failedBoxPos", void 0), c([p], t.prototype, "standardScore", void 0), c([p(cc.Node)], t.prototype, "bgMask", void 0), c([p(cc.Node)], t.prototype, "bencichengji", void 0), c([p(cc.SpriteFrame)], t.prototype, "bencichengjiarr", void 0), c([p(cc.Node)], t.prototype, "gengduoyouxi", void 0), c([p(cc.SpriteFrame)], t.prototype, "gengduoyouxiarr", void 0), c([p(cc.Node)], t.prototype, "adsButton2", void 0), c([p(cc.Node)], t.prototype, "bannerButton", void 0), t = n = c([d], t)
+                }, t.Instance = null, c([d(cc.Node)], t.prototype, "clickMask", void 0), c([d(cc.Node)], t.prototype, "failedUiBox", void 0), c([d(cc.Node)], t.prototype, "di", void 0), c([d(cc.Label)], t.prototype, "levelTxt", void 0), c([d(cc.Node)], t.prototype, "guan", void 0), c([d(cc.Node)], t.prototype, "continueTip", void 0), c([d(cc.Label)], t.prototype, "scoreLabel", void 0), c([d(cc.Node)], t.prototype, "highScoreNode", void 0), c([d(cc.Node)], t.prototype, "highScore", void 0), c([d(cc.Label)], t.prototype, "highScoreLabel", void 0), c([d(cc.Label)], t.prototype, "resultTxt", void 0), c([d(cc.Label)], t.prototype, "overTxt", void 0), c([d(cc.Node)], t.prototype, "moreGameBtn", void 0), c([d(cc.Node)], t.prototype, "reStartBtn", void 0), c([d(cc.Vec2)], t.prototype, "failedBoxPos", void 0), c([d], t.prototype, "standardScore", void 0), c([d(cc.Node)], t.prototype, "bgMask", void 0), c([d(cc.Node)], t.prototype, "bencichengji", void 0), c([d(cc.SpriteFrame)], t.prototype, "bencichengjiarr", void 0), c([d(cc.Node)], t.prototype, "gengduoyouxi", void 0), c([d(cc.SpriteFrame)], t.prototype, "gengduoyouxiarr", void 0), c([d(cc.Node)], t.prototype, "adsButton2", void 0), c([d(cc.Node)], t.prototype, "bannerButton", void 0), t = n = c([u], t)
             }(cc.Component);
-        n.default = f, cc._RF.pop()
+        n.default = p, cc._RF.pop()
     }, {
         "../Common/Utils": "Utils",
-        "../common/DynamicLoad": "DynamicLoad",
         "../common/PlayerInfo": "PlayerInfo",
         "./GameManager": "GameManager",
         "./MainGameUi": "MainGameUi"
@@ -1105,7 +1102,7 @@ window.__require = function e(t, n, o) {
             m = function(e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
-                    // return t.bgLayer = null, t.bgCamera = null, t.mainCamera = null, t.fruitNode = null, t.lineNode = null, t.bazieffect = null, t.downEffect = null, t.fruitPre = null, t.fruitS = [], t.step = 0, t.guideTime = 0, t.targetFruit = null, t.fruitHeigth = -1200, t.endOne = 0, t
+                    return t.bgLayer = null, t.bgCamera = null, t.mainCamera = null, t.fruitNode = null, t.lineNode = null, t.bazieffect = null, t.downEffect = null, t.fruitPre = null, t.fruitS = [], t.step = 0, t.guideTime = 0, t.targetFruit = null, t.fruitHeigth = -1200, t.endOne = 0, t
                 }
                 var n;
                 return o(t, e), n = t, t.prototype.onLoad = function() {
@@ -1122,10 +1119,10 @@ window.__require = function e(t, n, o) {
                     var e = this;
                     if (0 == this.endOne) {
                         for (var t = 0, n = function(n) {
-                                setTimeout(function() {
-                                    e.createFruitL(e.fruitNode.children[n].getComponent("fruitData").fruitNumber, e.fruitNode.children[n].position, e.fruitNode.children[n].width), a.default.score += e.fruitNode.children[n].getComponent("fruitData").fruitNumber + 1, i.default.Instance.SetScoreTween(a.default.score), e.fruitNode.children[n].active = !1
-                                }, 100 * ++t)
-                            }, o = this.fruitNode.children.length - 1; o >= 0; o--) n(o);
+                            setTimeout(function() {
+                                e.createFruitL(e.fruitNode.children[n].getComponent("fruitData").fruitNumber, e.fruitNode.children[n].position, e.fruitNode.children[n].width), a.default.score += e.fruitNode.children[n].getComponent("fruitData").fruitNumber + 1, i.default.Instance.SetScoreTween(a.default.score), e.fruitNode.children[n].active = !1
+                            }, 100 * ++t)
+                        }, o = this.fruitNode.children.length - 1; o >= 0; o--) n(o);
                         this.lineNode.active = !0;
                         for (var c = 1; c < this.lineNode.children.length; c++) this.lineNode.children[c].active = !1;
                         a.default.GameUpdateCtrl = !1, this.scheduleOnce(function() {
@@ -1137,10 +1134,10 @@ window.__require = function e(t, n, o) {
                     if (this.lineNode.children[0].y - n.Instance.fruitHeigth < -20 && 0 == this.endOne) {
                         for (var t = 0; t < this.fruitNode.children.length; t++) this.fruitNode.children[t].removeComponent(cc.PhysicsCircleCollider), this.fruitNode.children[t].removeComponent(cc.RigidBody);
                         for (var o = function(t) {
-                                setTimeout(function() {
-                                    e.createFruitL(e.fruitNode.children[t].getComponent("fruitData").fruitNumber, e.fruitNode.children[t].position, e.fruitNode.children[t].width), a.default.score += e.fruitNode.children[t].getComponent("fruitData").fruitNumber + 1, i.default.Instance.SetScoreTween(a.default.score), e.fruitNode.children[t].active = !1
-                                }, 100 * t)
-                            }, c = 0; c < this.fruitNode.children.length; c++) o(c);
+                            setTimeout(function() {
+                                e.createFruitL(e.fruitNode.children[t].getComponent("fruitData").fruitNumber, e.fruitNode.children[t].position, e.fruitNode.children[t].width), a.default.score += e.fruitNode.children[t].getComponent("fruitData").fruitNumber + 1, i.default.Instance.SetScoreTween(a.default.score), e.fruitNode.children[t].active = !1
+                            }, 100 * t)
+                        }, c = 0; c < this.fruitNode.children.length; c++) o(c);
                         this.lineNode.active = !0;
                         for (t = 1; t < this.lineNode.children.length; t++) this.lineNode.children[t].active = !1;
                         a.default.GameUpdateCtrl = !1, this.scheduleOnce(function() {
@@ -1244,17 +1241,17 @@ window.__require = function e(t, n, o) {
                         if (o[c].x < e.position.x) var a = -1;
                         else a = 1;
                         for (var i = function() {
-                                var t = r.default.Spawn("juicePre", e);
-                                t.setSiblingIndex(4), t.getComponent(cc.Sprite).spriteFrame = d.default.Instance.fllows[s.default.getRandomNum(0, 5, !0)], t.stopAllActions(), t.opacity = 255, t.scale = .3;
-                                var n = o[c];
-                                t.setPosition(n);
-                                var i = cc.v2(s.default.getRandomNum(0, 400, !0) * a, -s.default.getRandomNum(300, 500, !0)),
-                                    u = s.default.getRandomNum(1440, 3600, !0) * a,
-                                    p = s.default.getRandomNum(450, 600, !0);
-                                t.runAction(cc.sequence(cc.spawn(cc.sequence(cc.jumpBy(s.default.RandomInteger(1500, 1700) / p, i, p, 1), cc.spawn(cc.moveBy(50 / p, cc.v2(0, -30)), cc.fadeOut(50 / p))), cc.scaleTo(s.default.RandomInteger(1500, 1700) / p, s.default.getRandomNum(.4, .7, !1)), cc.rotateTo(s.default.RandomInteger(1500, 1700) / p, u / 2)), cc.callFunc(function() {
-                                    r.default.Despawn("juicePre", t)
-                                }, l)))
-                            }, l = this, u = 0; u < n; u++) i()
+                            var t = r.default.Spawn("juicePre", e);
+                            t.setSiblingIndex(4), t.getComponent(cc.Sprite).spriteFrame = d.default.Instance.fllows[s.default.getRandomNum(0, 5, !0)], t.stopAllActions(), t.opacity = 255, t.scale = .3;
+                            var n = o[c];
+                            t.setPosition(n);
+                            var i = cc.v2(s.default.getRandomNum(0, 400, !0) * a, -s.default.getRandomNum(300, 500, !0)),
+                                u = s.default.getRandomNum(1440, 3600, !0) * a,
+                                p = s.default.getRandomNum(450, 600, !0);
+                            t.runAction(cc.sequence(cc.spawn(cc.sequence(cc.jumpBy(s.default.RandomInteger(1500, 1700) / p, i, p, 1), cc.spawn(cc.moveBy(50 / p, cc.v2(0, -30)), cc.fadeOut(50 / p))), cc.scaleTo(s.default.RandomInteger(1500, 1700) / p, s.default.getRandomNum(.4, .7, !1)), cc.rotateTo(s.default.RandomInteger(1500, 1700) / p, u / 2)), cc.callFunc(function() {
+                                r.default.Despawn("juicePre", t)
+                            }, l)))
+                        }, l = this, u = 0; u < n; u++) i()
                     }
                 }, t.Instance = null, c([h(cc.Node)], t.prototype, "bgLayer", void 0), c([h(cc.Node)], t.prototype, "bgCamera", void 0), c([h(cc.Node)], t.prototype, "mainCamera", void 0), c([h(cc.Node)], t.prototype, "fruitNode", void 0), c([h(cc.Node)], t.prototype, "lineNode", void 0), c([h(cc.Node)], t.prototype, "bazieffect", void 0), c([h(cc.Node)], t.prototype, "downEffect", void 0), c([h(cc.Prefab)], t.prototype, "fruitPre", void 0), t = n = c([f], t)
             }(cc.Component);
@@ -1408,7 +1405,6 @@ window.__require = function e(t, n, o) {
                 cacheList: null,
                 isBusy: null,
                 req: null,
-                method:"get",
                 perform: null,
                 retGameId: 0
             }, "cacheList", []), c(o, "ctor", function() {}), c(o, "checkHave", function() {
@@ -1759,15 +1755,15 @@ window.__require = function e(t, n, o) {
             },
             onLoad: function() {
                 cc.director.getCollisionManager().enabled = !0,
-                cc.director.getPhysicsManager().enabled = !0,
-                this.gameOveEndBool = !1,
-                this.gameOverNum = 0,
-                this.gameWidth = cc.winSize.width,
-                this.gameHeight = cc.winSize.height,
-                o.playNum,
-                o.playNum++,
-                c.loadingLayer("panel/LinkIconSpr"),
-                o.mainGameJs = this, o.publicGameBool || this.play()
+                    cc.director.getPhysicsManager().enabled = !0,
+                    this.gameOveEndBool = !1,
+                    this.gameOverNum = 0,
+                    this.gameWidth = cc.winSize.width,
+                    this.gameHeight = cc.winSize.height,
+                    o.playNum,
+                    o.playNum++,
+                    c.loadingLayer("panel/LinkIconSpr"),
+                    o.mainGameJs = this, o.publicGameBool || this.play()
             },
             play: function() {
                 console.log(1);
@@ -1816,15 +1812,12 @@ window.__require = function e(t, n, o) {
             gameEnd1: function() {
                 var e = this,
                     t = this.returnCurrentLanType();
-                1 == t ? (this.gameOverT1.string = "游戏结束", this.gameOverT2.string = "刮开有奖") : 2 == t ? (this.gameOverT1.string = "刮开有奖", this.gameOverT2.string = "刮开有奖") : 4 == t ? (this.gameOverT1.string = "刮开有奖", this.gameOverT2.string = "刮开有奖") : (this.gameOverT1.string = "Game Over", this.gameOverT2.string = "Click to view the score"), this.gameOveEndBool = !0, this.gameOverT1.node.zIndex = 999, this.gameOverT2.node.zIndex = 999, this.gameOverToEnd.zIndex = 999, this.gameOverT1.node.opacity = 0, this.gameOverT1.node.y = 100, this.gameOverToEnd.y = 0, this.gameOverT1.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverToEnd.runAction(cc.sequence(cc.fadeTo(1, 100), cc.callFunc(function() {
+                1 == t ? (this.gameOverT1.string = "\u6e38 \u620f \u7ed3 \u675f", this.gameOverT2.string = "\u70b9 \u51fb \u67e5 \u770b \u5206 \u6570") : 2 == t ? (this.gameOverT1.string = "\u904a \u6232 \u7d50 \u675f", this.gameOverT2.string = "\u9ede \u64ca \u67e5 \u770b \u5206 \u6578") : 4 == t ? (this.gameOverT1.string = "\uac8c\uc784 \uc885\ub8cc", this.gameOverT2.string = "\ud074\ub9ad \ud558\uc5ec \uc810\uc218 \ubcf4\uae30") : (this.gameOverT1.string = "Game Over", this.gameOverT2.string = "Click to view the score"), this.gameOveEndBool = !0, this.gameOverT1.node.zIndex = 999, this.gameOverT2.node.zIndex = 999, this.gameOverToEnd.zIndex = 999, this.gameOverT1.node.opacity = 0, this.gameOverT1.node.y = 100, this.gameOverToEnd.y = 0, this.gameOverT1.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverToEnd.runAction(cc.sequence(cc.fadeTo(1, 100), cc.callFunc(function() {
                     e.gameOverToEnd.getComponent(cc.Button).enabled = !0
                 }))), this.gameOverT2.node.opacity = 0, this.gameOverT2.node.y = this.gameOverT1.node.y - 100, this.gameOverT2.node.runAction(cc.sequence(cc.delayTime(.2), cc.spawn(cc.fadeIn(1), cc.moveBy(1, 0, -50)), cc.delayTime(.3))), this.gameOverT2.node.runAction(cc.sequence(cc.delayTime(2), cc.scaleTo(.3, 1.2).easing(cc.easeSineInOut()), cc.scaleTo(.3, 1).easing(cc.easeSineInOut()))).repeatForever()
             },
             initEndLayer: function() {
-                this.gameOverT1.node.active = !1, this.gameOverT2.node.active = !1, this.gameOverToEnd.active = !1, o.publicGameBool || adBreak({
-                    type: "next",
-                    name: "restart-game"
-                }), a.gotoEndLayer1()
+                this.gameOverT1.node.active = !1, this.gameOverT2.node.active = !1, this.gameOverToEnd.active = !1, o.publicGameBool , a.gotoEndLayer1()
             },
             start: function() {},
             update: function(e) {
@@ -1837,10 +1830,7 @@ window.__require = function e(t, n, o) {
                 o.gameScore = e
             },
             RestartGame: function() {
-                o.GAME_OVER_BOOL = !0, o.gameScore = 0, o.publicGameBool || adBreak({
-                    type: "next",
-                    name: "restart-game"
-                }), c.loadingScene("MainGameScene")
+                o.GAME_OVER_BOOL = !0, o.gameScore = 0, o.publicGameBool, c.loadingScene("MainGameScene")
             },
             SetGameEndScore: function() {
                 a.gameOverShowText(o.gameScore, 1)
@@ -1914,9 +1904,8 @@ window.__require = function e(t, n, o) {
                 }, t.prototype.update = function(e) {
                     this.UpdateScoreLabel(e), this.lerpCtrl && this.lerpNumFunc(this.passlevelYQ), this.levelPanel.children[1].getComponent(cc.Label).string = s.default.Instance.GetLevel().toString()
                 }, t.prototype.adsButtonFunc = function() {
-
-                    console.log(b.default.Instance.targetFruit.destroy())
-                    console.log(b.default.Instance.targetFruit.setPosition(1000,-200))
+                    if(b.default.Instance.targetFruit.name==='') return;
+                    b.default.Instance.targetFruit.destroy()
                     b.default.Instance.createOneFruit(Math.floor(Math.random()*6))
                 }, t.prototype.TestPasslevel = function() {
                     var e = this;
@@ -1963,10 +1952,7 @@ window.__require = function e(t, n, o) {
                     var e = this;
                     this.congratulation.children[2].active = !1, this.congratulation.children[1].runAction(cc.sequence(cc.scaleTo(.5, 0).easing(cc.easeBackIn()), cc.callFunc(function() {
                         e.congratulation.active = !1, a.default.GameUpdateCtrl = !0
-                    }))), l.publicGameBool || adBreak({
-                        type: "next",
-                        name: "restart-game"
-                    }), this.scheduleOnce(function() {
+                    }))), l.publicGameBool, this.scheduleOnce(function() {
                         e.player.getComponent(cc.PolygonCollider).enabled = !0
                     }, 1)
                 }, t.Instance = null, c([f(cc.Node)], t.prototype, "mainCamera", void 0), c([f(cc.Node)], t.prototype, "bgLayer", void 0), c([f(cc.Label)], t.prototype, "scoreLabel", void 0), c([f(cc.Node)], t.prototype, "scorePanel", void 0), c([f(cc.Node)], t.prototype, "guidePanel", void 0), c([f(cc.Node)], t.prototype, "injuredPanel", void 0), c([f(cc.Node)], t.prototype, "levelPanel", void 0), c([f(cc.Node)], t.prototype, "levelProgress", void 0), c([f(cc.Node)], t.prototype, "heartPanel", void 0), c([f(cc.Node)], t.prototype, "congratulation", void 0), c([f(cc.Node)], t.prototype, "adsButton", void 0), c([f(cc.Node)], t.prototype, "player", void 0), t = n = c([p], t)
@@ -2544,8 +2530,8 @@ window.__require = function e(t, n, o) {
                 return a > 3 && i && Object.defineProperty(t, n, i), i
             };
         Object.defineProperty(n, "__esModule", {
-                value: !0
-            }),
+            value: !0
+        }),
             function(e) {
                 e[e.PositiveX = 0] = "PositiveX", e[e.PositiveY = 1] = "PositiveY", e[e.NegativeX = 2] = "NegativeX", e[e.NegativeY = 3] = "NegativeY"
             }(o = n.Axis || (n.Axis = {}));
@@ -3346,8 +3332,8 @@ window.__require = function e(t, n, o) {
                 }, t.prototype.update = function(e) {
                     var t = this;
                     if (this.node.x < -this.bianjieX && (this.node.x = -this.bianjieX), this.node.x > this.bianjieX && (this.node.x = this.bianjieX), this.notTargetTime += e, this.returnNumber && (this.scheduleOnce(function() {
-                            t.getNumberTime = 0
-                        }, .25), this.returnNumber = !1), "fruitNode" == this.node.parent.name && (this.testEndDJS += e), this.node.y + this.node.width / 2 > cc.find("Canvas/lineNode").children[0].y && 0 == this.pengzhuangCount && this.endCtrl && 0 == this.endOne && this.testEndDJS > 3) {
+                        t.getNumberTime = 0
+                    }, .25), this.returnNumber = !1), "fruitNode" == this.node.parent.name && (this.testEndDJS += e), this.node.y + this.node.width / 2 > cc.find("Canvas/lineNode").children[0].y && 0 == this.pengzhuangCount && this.endCtrl && 0 == this.endOne && this.testEndDJS > 3) {
                         a.default.GameUpdateCtrl = !1, a.default.playerTouch = !1;
                         for (var n = 0; n < cc.find("Canvas/fruitNode").children.length; n++) cc.find("Canvas/fruitNode").children[n].removeComponent(cc.PhysicsCircleCollider), cc.find("Canvas/fruitNode").children[n].removeComponent(cc.RigidBody);
                         this.node.color = cc.Color.RED, cc.tween(this.node).to(.3, {
@@ -3404,7 +3390,7 @@ window.__require = function e(t, n, o) {
                         o = this.node.y;
                     e.position = cc.v2(s.default.RandomInteger(n, t), o), e.runAction(cc.fadeOut(2))
                 }, t.prototype.planeBoomEffect = function() {
-console.log('12')
+                    console.log('12')
                     r.default.Spawn("boom", cc.find("Canvas/upEffectParent")).position = s.default.convetOtherNodeSpaceAR(this.node, cc.find("Canvas/upEffectParent"))
                 }, t.prototype.clockEoilffect = function(e, t) {
                     console.log('12')
@@ -3414,8 +3400,6 @@ console.log('12')
                         t.position = e.position, t.scale = .3, t.runAction(cc.sequence(cc.scaleTo(.5, 1.1), cc.fadeOut(.5)))
                     }, 300 * n)
                 }, t.prototype.addScoreEffect = function() {
-                    console.log('12')
-
                     var e = r.default.Spawn("add1", cc.find("Canvas/mainGameUi"));
                     e.position = cc.find("Canvas/mainGameUi").children[0].position.add(cc.v2(0, 50)), e.runAction(cc.spawn(cc.moveBy(.5, 0, 50), cc.fadeOut(.5)))
                 }, c([h()], t.prototype, "fruitNumber", void 0), t = c([f], t)
@@ -3849,10 +3833,7 @@ console.log('12')
                 }, t.prototype.start = function() {
                     this.startPanel.children[1].scaleX = 0, this.startPanel.children[1].runAction(cc.scaleTo(.5, .9).easing(cc.easeBackOut())), this.startPanel.children[2].runAction(cc.repeatForever(cc.sequence(cc.scaleTo(.5, 1.1), cc.scaleTo(.5, 1), cc.delayTime(.5)))), this.initTitle(), cc.director.preloadScene("MainGameScene")
                 }, t.prototype.StartGame = function() {
-                    i.publicGameBool || adBreak({
-                        type: "next",
-                        name: "restart-game"
-                    }), this.startBtn.stopAllActions(), this.startBtn.runAction(cc.sequence(cc.scaleTo(.1, .8), cc.scaleTo(.1, 1), cc.callFunc(function() {
+                    i.publicGameBool, this.startBtn.stopAllActions(), this.startBtn.runAction(cc.sequence(cc.scaleTo(.1, .8), cc.scaleTo(.1, 1), cc.callFunc(function() {
                         cc.director.loadScene("MainGameScene")
                     })))
                 }, t.prototype.initTitle = function() {
@@ -4000,40 +3981,4 @@ console.log('12')
         "./GameFunction": "GameFunction",
         "./GameManager": "GameManager"
     }]
-}, {}, [ "MainGameJS",
-    "AddScore",
-    "AdjusWithHeight",
-    "AudioManager",
-    "DataManager",
-    "EffectCenter",
-    "FailedUi",
-    "GameFunction",
-    "GameManager",
-    "InputController",
-    "KnifeCollision",
-    "MainGameUi",
-    "NewAttribute",
-    "PhysicsParticle",
-    "Rocker",
-    "RotateAround",
-    "Stack",
-    "WallUpdate",
-    "fruitData",
-    "startPanel",
-    "GameConfig",
-    "GameUiTools",
-    "DynamicLoad",
-    "EffectSprite",
-    "PlayerInfo",
-    "PoolManager",
-    "RandomFly",
-    "RenderWater",
-    "Shake",
-    "SpriteManager",
-    "Toast",
-    "Utils",
-    "bfPrefabJs",
-    "gameOverJs",
-    "linkHttpIconJs",
-    "startGameJs",
-    "use_v2.1.x_cc.Action"]);
+}, {}, ["HttpManagerJs", "LanguageSetJs", "LoadSceneJs", "AniTools", "MainGameJS", "ToolsJs", "resArr", "MainManage", "AddScore", "AdjusWithHeight", "AudioManager", "AutoDestroy", "DataManager", "EffectCenter", "FailedUi", "GameFunction", "GameManager", "InputController", "KnifeCollision", "MainGameUi", "NewAttribute", "PhysicsParticle", "Rocker", "RotateAround", "Stack", "WallUpdate", "fruitData", "peaCannonAI", "startPanel", "wineObsmove", "winerCollision", "GameConfig", "GameUiTools", "DynamicLoad", "EffectSprite", "PlayerInfo", "PoolManager", "RandomFly", "RenderWater", "Shake", "SpriteManager", "Toast", "Utils", "bfPrefabJs", "gameOverJs", "linkHttpIconJs", "startGameJs", "use_v2.1.x_cc.Action"]);
